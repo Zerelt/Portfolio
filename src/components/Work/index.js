@@ -19,30 +19,30 @@ import {
 
 const projects = [
   {
-    "title":"The Prospect Exchange",
-    "description":"Professional hockey game analysis app that allows players to gain exposure and coaches to find new talent",
-    "image":AppTpe,
-    "live":"https://app.theprospectexchange.com",
+    "title": "The Prospect Exchange",
+    "description": "Professional hockey game analysis app that allows players to gain exposure and coaches to find new talent",
+    "image": AppTpe,
+    "live": "https://app.theprospectexchange.com",
     "secondaryDescription": {
       "mainTools": "React, styled components, Redux, React Router, REST API Calls, Git, Auth0",
       "otherTools": "Slack, Clubhouse, Zeplin, Sendgrid, Google cloud platform, Illustrator, Photoshop"
     }
   },
   {
-    "title":"The Prospect Exchange",
-    "description":"Marketing website for The Prospect Exchange with separate pages for Coaches and Player audiences",
-    "image":WebTpe,
-    "live":"https://theprospectexchange.com",
+    "title": "The Prospect Exchange",
+    "description": "Marketing website for The Prospect Exchange with separate pages for Coaches and Player audiences",
+    "image": WebTpe,
+    "live": "https://theprospectexchange.com",
     "secondaryDescription": {
       "mainTools": "React, styled components, React Router, Git",
       "otherTools": "Slack, Clubhouse, Zeplin, Sendgrid, Drift, Google cloud platform, Illustrator, Photoshop"
     }
   },
   {
-    "title":"Brain Armada",
-    "description":"Anim eiusmod duis magna anim irure occaecat ex consectetur sit ullamco consequat ad ut ullamco.",
-    "image":AppTpe,
-    "live":"https://thebrainarmada.com",
+    "title": "Brain Armada",
+    "description": "Anim eiusmod duis magna anim irure occaecat ex consectetur sit ullamco consequat ad ut ullamco.",
+    "image": AppTpe,
+    "live": "https://thebrainarmada.com",
     "secondaryDescription": {
       "mainTools": "React, styled components, React Router, REST API Calls, Git",
       "otherTools": "Slack, Google cloud platform, Illustrator"
@@ -96,7 +96,7 @@ const Work = ({ workRef, defaultTheme, projectOneTop, projectTwoTop, projectThre
 }
 
 Work.propTypes = {
-  workRef : PropTypes.func,
+  workRef: PropTypes.func,
   defaultTheme: PropTypes.bool,
   projectOneTop: PropTypes.number,
   projectTwoTop: PropTypes.number,

@@ -27,6 +27,11 @@ module.exports = {
     }
   },
   plugins: ['react', 'react-hooks'],
+  settings: {
+    react: {
+      version: "detect"
+    }
+  },
   rules: {
     'standard/object-curly-even-spacing': ['warn', 'always'],
     'standard/array-bracket-even-spacing': ['warn','never'],
@@ -35,6 +40,7 @@ module.exports = {
     'no-throw-literal': 'warn',
     
     'jsx-quotes': 0,
+    "key-spacing": ["error", { "beforeColon": false, "afterColon": true }],
     'no-redeclare': 'error',
     'no-mixed-operators': 0,
     'no-constant-condition': 'warn',
@@ -48,12 +54,12 @@ module.exports = {
     [
       1,
       {
-        'nonEmpty':'after-props',
-        'selfClosing':'tag-aligned'
+        'nonEmpty': 'after-props',
+        'selfClosing': 'tag-aligned'
       }
     ],
     'react/jsx-curly-spacing': ['error', { when: 'never' }],
-    "react/jsx-handler-names":[0],
+    "react/jsx-handler-names": [0],
     'react/jsx-indent': [2,2],
     'react/jsx-indent-props': [2, 2],
     'react/jsx-tag-spacing': 'warn',
