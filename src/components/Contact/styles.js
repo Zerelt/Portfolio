@@ -322,9 +322,7 @@ export const Message = styled.textarea`
   }
 `
 
-export const SubmitBtn = styled.button`
-  ${MainButton}
-  margin:0 auto;
+export const SubmitBtnWrapper = styled.div`
   opacity:${props => props.messageFieldTop<props.height-200 ? 1 : 0};
   transition: opacity 0.16s;
   transition-delay: ${props => props.messageFieldTop<props.height-200 ? '.16s' : '0s'};
@@ -332,6 +330,11 @@ export const SubmitBtn = styled.button`
     opacity:${props => props.messageFieldTop<props.height-300 ? 1 : 0};
     transition-delay: ${props => props.messageFieldTop<props.height-300 ? '1.48s' : '0s'}
   }
+`
+
+export const SubmitBtn = styled.button`
+  ${MainButton}
+  margin:0 auto;
 `
 
 

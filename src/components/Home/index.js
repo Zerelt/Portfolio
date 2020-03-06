@@ -68,7 +68,7 @@ const Home = ({ homeRef, defaultTheme, handleNavClick })=> {
               <ButtonDot />
               <ButtonDot />
             </WorkButton>
-            <DesignsButton defaultTheme={defaultTheme} onClick={()=>handleNavClick('design')}>
+            <DesignsButton defaultTheme={defaultTheme} onClick={()=>handleNavClick('designs')}>
               designs
               <ButtonDot designDot defaultTheme={defaultTheme} />
               <ButtonDot designDot defaultTheme={defaultTheme} />
@@ -101,7 +101,7 @@ const Home = ({ homeRef, defaultTheme, handleNavClick })=> {
           <ButtonDot />
           <ButtonDot />
         </MidButton>
-        <MidButton defaultTheme={defaultTheme} onClick={()=>handleNavClick('design')}>
+        <MidButton defaultTheme={defaultTheme} onClick={()=>handleNavClick('designs')}>
           designs
           <ButtonDot designDot defaultTheme={defaultTheme} />
           <ButtonDot designDot defaultTheme={defaultTheme} />
