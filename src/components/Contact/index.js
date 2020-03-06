@@ -32,9 +32,9 @@ class Contact extends Component {
   }
 
   state={
-    name:'',
-    email:'',
-    message:''
+    name: '',
+    email: '',
+    message: ''
   }
 
   handleInputChange= (e) => {

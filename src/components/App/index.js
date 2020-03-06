@@ -23,21 +23,21 @@ class App extends Component {
       defaultTheme: false, // true = black
       currentPage: '',
 
-      height:window.innerHeight,
-      width:window.innerWidth,
+      height: window.innerHeight,
+      width: window.innerWidth,
 
-      infoOneTop:null,
-      projectOneTop:null,
-      projectTwoTop:null,
-      projectThreeTop:null,
+      infoOneTop: null,
+      projectOneTop: null,
+      projectTwoTop: null,
+      projectThreeTop: null,
 
       designTextTop: null,
       designCarouselTop: null,
 
-      contactHeadlineTop:null,
-      nameFieldTop:null,
-      emailFieldTop:null,
-      messageFieldTop:null
+      contactHeadlineTop: null,
+      nameFieldTop: null,
+      emailFieldTop: null,
+      messageFieldTop: null
     }
 
 
@@ -70,7 +70,7 @@ class App extends Component {
 
   handleTheme = () => {
     const { defaultTheme } = this.state
-    this.setState({ defaultTheme:!defaultTheme },()=>{
+    this.setState({ defaultTheme: !defaultTheme },()=>{
       const color = defaultTheme ? COLORS.DARKBLACK : COLORS.WHITE;
       document.body.style.backgroundColor=color
     })
@@ -78,8 +78,8 @@ class App extends Component {
   
   handleResize = () => {
     this.setState({
-      height:window.innerHeight,
-      width:window.innerWidth
+      height: window.innerHeight,
+      width: window.innerWidth
     });
   }
   
@@ -124,7 +124,7 @@ class App extends Component {
 
     if(home<=height/3 && about>height/3) {
       this.setState({
-        currentPage:'home'
+        currentPage: 'home'
       })
     }
     if(about<=(height/3) && work>height/3 ) {
@@ -156,11 +156,11 @@ class App extends Component {
     const work = this.workSection
     const designs = this.designsSection
     const contact = this.contactSection
-    if (x==='home') {home.scrollIntoView({ block:'start', behavior: 'smooth' });}
-    if (x==='about') {about.scrollIntoView({ block:'start', behavior: 'smooth' });}
-    if (x==='work') {work.scrollIntoView({ block:'start', behavior: 'smooth' });}
-    if (x==='designs') {designs.scrollIntoView({ block:'start', behavior: 'smooth' });}
-    if (x==='contact') {contact.scrollIntoView({ block:'start', behavior: 'smooth' });}
+    if (x==='home') {home.scrollIntoView({ block: 'start', behavior: 'smooth' });}
+    if (x==='about') {about.scrollIntoView({ block: 'start', behavior: 'smooth' });}
+    if (x==='work') {work.scrollIntoView({ block: 'start', behavior: 'smooth' });}
+    if (x==='designs') {designs.scrollIntoView({ block: 'start', behavior: 'smooth' });}
+    if (x==='contact') {contact.scrollIntoView({ block: 'start', behavior: 'smooth' });}
   }
 
   render() {
@@ -174,7 +174,7 @@ class App extends Component {
     } = this.state
       return (
         <Scrollbars
-          style={{ marginBottom:'-30px' }}
+          style={{ marginBottom: '-30px' }}
           onScroll={this.handleScroll}
           renderThumbVertical={props => <div {...props} className="thumb-vertical" />}
           renderTrackVertical={props => <div {...props} className="track-vertical" />}>

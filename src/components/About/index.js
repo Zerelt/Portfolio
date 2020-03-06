@@ -134,7 +134,7 @@ const About = React.forwardRef((props,ref) => {
 })
 
 About.propTypes = {
-  aboutRef : PropTypes.func,
+  aboutRef: PropTypes.func,
   defaultTheme: PropTypes.bool,
   infoOneTop: PropTypes.number,
   height: PropTypes.number,
