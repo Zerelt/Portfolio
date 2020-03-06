@@ -6,7 +6,7 @@
   "scripts": {
     "start": "webpack-dev-server",
     "clean": "rimraf ./dist/*",
-    "prod": "npm run clean && webpack -p --config webpack-production.config.js",
+    "prod": "webpack -p --config webpack-production.config.js",
     "mobile": "webpack-dev-server --host 0.0.0.0",
     "prettyCheck": "prettier --config .prettierrc.js ./src/components/**/*.js --check",
     "pretty": "prettier --config .prettierrc.js ./src/components/**/*.js --write",
