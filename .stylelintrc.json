@@ -11,7 +11,7 @@
     "no-descending-specificity": null,
     "declaration-block-no-shorthand-property-overrides": null,
     "number-leading-zero":"never",
-    "declaration-colon-space-after":"always",
+    "declaration-colon-space-after":null,
     "declaration-colon-space-before":"never"
   }
 }

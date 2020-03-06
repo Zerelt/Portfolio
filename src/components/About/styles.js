@@ -14,7 +14,7 @@ function revealWords(wordCountStart,wordCountEnd) {
       styles +=`
       .words-revealed-${i} {
          opacity:1;
-          transition:opacity 0.2s ${i*0.07}s ease-in-out;
+          transition:opacity .2s ${i*.07}s ease-in-out;
         }
       `
     }
@@ -23,7 +23,7 @@ function revealWords(wordCountStart,wordCountEnd) {
       styles+=`
       .words-revealed-${i} {
           opacity:1;
-          transition:opacity 0.2s ${i*0.035}s ease-in-out;
+          transition:opacity .2s ${i*.035}s ease-in-out;
         }
       `
     }
@@ -38,7 +38,7 @@ function underlineKeywords(wordCountStart,wordCountEnd) {
       styles+=`
         .keywords-underlined-${i} {
           width:100%;
-          transition:width 0.2s ease-in-out;
+          transition:width .2s ease-in-out;
           transition-delay: ${(i*.15) + 1.8}s;
           z-index:-1;
         }
@@ -49,7 +49,7 @@ function underlineKeywords(wordCountStart,wordCountEnd) {
         styles+=`
           .keywords-underlined-${i} {
             width:100%;
-            transition:width 0.2s ease-in-out;
+            transition:width .2s ease-in-out;
             transition-delay: ${(i*.15) + .9}s;
             z-index:-1;
           }
@@ -135,7 +135,7 @@ export const Keywords = styled.span`
     width:0;
     height:1px;
     background-color:${COLORS.ACCENT};
-    transition:width 0.212s ease-in-out;
+    transition:width .212s ease-in-out;
   }
   @media(min-width:768px) {
     span{

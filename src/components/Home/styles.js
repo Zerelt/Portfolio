@@ -103,7 +103,7 @@ export const LogoContainer = styled.div`
     line{
       stroke-dasharray: 300;
       stroke-dashoffset: 300;
-      animation:LineAnimation-Md 0.5s ease-in-out;
+      animation:LineAnimation-Md .5s ease-in-out;
       animation-fill-mode:forwards;
     }
     .BlackAndWhite, .ColorLetters {
@@ -123,7 +123,7 @@ export const LogoContainer = styled.div`
     line{
       stroke-dasharray: 480;
       stroke-dashoffset: 480;
-      animation:LineAnimation-Lg 0.5s ease-in-out;
+      animation:LineAnimation-Lg .5s ease-in-out;
       animation-fill-mode:forwards;
     }
     .BlackAndWhite, .ColorLetters {
@@ -240,7 +240,7 @@ export const Headline = styled.div`
   color: ${props=>props.defaultTheme ? COLORS.WHITE : COLORS.DARKBLACK};
   opacity: ${props=>props.pageLoaded ? 1 : 0};
   transform: ${props=>props.pageLoaded ? 'translateY(0)':'translateY(15px)'};
-  transition:opacity .18s 0.28s, transform .18s 0.28s ease-in;
+  transition:opacity .18s .28s, transform .18s .28s ease-in;
   span{
     color:${COLORS.ACCENT};
   }
@@ -284,7 +284,7 @@ export const Headline = styled.div`
 export const ButtonBox = styled.div`
   opacity:${props=>props.pageLoaded ? 1 : 0};
   transform:${props => props.pageLoaded ? 'translateY(0)': 'translateY(20px)'};
-  transition:opacity .18s 0.56s, transform .18s 0.56s;
+  transition:opacity .18s .56s, transform .18s .56s;
   @media (min-width:560px) and (orientation:landscape) {
     display:flex;
     align-items:center;
@@ -300,7 +300,7 @@ export const ButtonBox = styled.div`
     justify-content:space-between;
     width:100%;
     max-width:565px;
-    transition:opacity 0.14s 3.8s, transform 0.14s 3.8s;
+    transition:opacity .14s 3.8s, transform .14s 3.8s;
   }
   @media(min-width:1600px) {
     max-width:600px;
@@ -317,7 +317,7 @@ export const ButtonBox2 = styled.div`
     margin:135px 0 0 0;
     opacity:${props=>props.pageLoaded ? 1 : 0};
     transform:${props => props.pageLoaded ? 'translateY(0)': 'translateY(20px)'};
-    transition:opacity 0.14s 3.8s, transform 0.14s 3.8s;
+    transition:opacity .14s 3.8s, transform .14s 3.8s;
   }
   @media(min-width:992px) {
     display:none;
@@ -349,7 +349,7 @@ export const WorkButton = styled.button`
         &:nth-child(2){
           transform:translateX(-10px);
         }
-        transition:transform 0.14s ease;
+        transition:transform .14s ease;
       }
     }
   }
@@ -380,7 +380,7 @@ export const ButtonDot = styled.span`
   bottom:0;
   margin:auto;
   right:15px;
-  transition:transform 0.14s ease;
+  transition:transform .14s ease;
   &:nth-child(1) {
     right:auto;
     left:15px;
@@ -489,7 +489,7 @@ export const Social = styled.a`
     width:0;
     height:2px;
     background-color:${COLORS.ACCENT};
-    transition:width 0.14s;
+    transition:width .14s;
   }
   &:hover{
     transform:translateY(-2px);
@@ -498,7 +498,7 @@ export const Social = styled.a`
       left:0;
       right:auto;
       width:100%;
-      transition:width 0.14s;
+      transition:width .14s;
     }
   }
 `
@@ -514,7 +514,7 @@ export const TopLeftDecoration = styled.div`
     height:60px;
     width:120px;
     transform: ${props=>props.pageLoaded ? 'translate(0px,0px)' : 'translate(-60px,-120px)'};
-    transition: 0.16s 3.2s;
+    transition: .16s 3.2s;
   }
 `
 
