@@ -72,7 +72,7 @@ class Contact extends Component {
           Say Hi<span>.</span>
         </ContactHeader>
         <ContactForm name='contact' netlify method='post'>
-          <input type='hidden' name='form-name' value='contact' />
+          <input type='hidden' name='contact' value='contact' />
           <InputContainer>
             <NameAndEmail>
               <NameBox nameFieldTop={nameFieldTop} height={height}>
