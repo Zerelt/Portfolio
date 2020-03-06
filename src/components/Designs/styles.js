@@ -178,7 +178,7 @@ export const Carousel = styled.div`
     border-radius:12px;
     .carouselItem{
       opacity:${props => props.designTextTop <= props.height/2 ? 1 : 0};
-      transition:opacity 0.16s 1s;
+      transition:opacity .16s 1s;
     }
     &:hover{
       >div{
@@ -234,7 +234,7 @@ export const CarouselTouch = styled.div`
     flex-wrap: wrap;
     .carouselItem{
       opacity:${props => props.designTextTop <= props.height/2 ? 1 : 0};
-      transition:opacity 0.16s 1s;
+      transition:opacity .16s 1s;
     }
   }
 `

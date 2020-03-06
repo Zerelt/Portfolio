@@ -49,7 +49,7 @@ export const ContactHeader = styled.p`
   color:${props => props.defaultTheme ? COLORS.WHITE : COLORS.DARKBLACK};
   text-align: left;
   opacity:${props => props.contactHeadlineTop<props.height-300 ? 1 : 0};
-  transition: opacity 0.16s ease-in-out;
+  transition: opacity .16s ease-in-out;
   span{
     color: ${COLORS.ACCENT};
   }
@@ -125,7 +125,7 @@ export const NameBox = styled.div`
   position:relative;
   .notEmpty-label, 
   .userInput:focus ~ .inputLabel {
-    transform:translateY(-20px) scale(0.8);
+    transform:translateY(-20px) scale(.8);
     transition: transform .18s;
     transform-origin: top left;
   }
@@ -144,7 +144,7 @@ export const NameBox = styled.div`
   @media(min-width:992px) {
     .notEmpty-label, 
     .userInput:focus ~ .inputLabel {
-      transform:translateY(-17px) scale(0.692);
+      transform:translateY(-17px) scale(.692);
     }
     >span{
       height:2px;
@@ -166,7 +166,7 @@ export const EmailBox = styled(NameBox)`
   @media(min-width:992px) {
     >span{
       width:${props => props.nameFieldTop<props.height-300 ? '100%' : 0};
-      transition-delay: 0.2s;
+      transition-delay: .2s;
     }
     >input{
       width:${props => props.nameFieldTop<props.height-300 ? 1 : 0};
@@ -178,13 +178,13 @@ export const MessageBox = styled.div`
   position:relative;
   .notEmpty-messageLabel,
   .message:focus ~ .messageLabel {
-    transform:translate(-6px,-20px) scale(0.8);
-    transition: transform 0.18s;
+    transform:translate(-6px,-20px) scale(.8);
+    transition: transform .18s;
     @media (min-width:768px) {
-      transform:translate(-11px,-20px) scale(0.8);
+      transform:translate(-11px,-20px) scale(.8);
     }
     @media (min-width:992px) {
-      transform:translate(-14px,-21px) scale(0.692);
+      transform:translate(-14px,-21px) scale(.692);
     }
   }
   >span{
@@ -214,7 +214,7 @@ export const MessageBox = styled.div`
       width:2px;
       height:${props => props.messageFieldTop<props.height-300 ? '100%' : 0};
       transition:height .2s ease-in-out;
-      transition-delay: 0.4s;
+      transition-delay: .4s;
     }
     >textarea{
       opacity:${props => props.messageFieldTop<props.height-300 ? 1 : 0};
@@ -231,10 +231,10 @@ export const NameLabel = styled.label`
   font-size: 16px;
   color:${props => props.defaultTheme ? COLORS.WHITE : COLORS.DARKBLACK};
   z-index:1;
-  transition: all 0.2s;
+  transition: all .2s;
   >span{
     opacity:${props => props.nameFieldTop<props.height-100 ? 1 : 0};
-    transition: opacity 0.16s;
+    transition: opacity .16s;
     transition-delay: ${props => props.nameFieldTop<props.height-100 ? '.16s' : '0s'}
   }
   @media(min-width: 768px) {
@@ -253,7 +253,7 @@ export const NameLabel = styled.label`
 export const EmailLabel = styled(NameLabel)`
   >span{
     opacity:${props => props.emailFieldTop<props.height-100 ? 1 : 0};
-    transition: opacity 0.16s;
+    transition: opacity .16s;
     transition-delay: ${props => props.emailFieldTop<props.height-100 ? '.16s' : '0s'}
   }
   @media(min-width:992px) {
@@ -267,7 +267,7 @@ export const EmailLabel = styled(NameLabel)`
 export const MessageLabel = styled(NameLabel)`
   >span{
     opacity:${props => props.messageFieldTop<props.height-200 ? 1 : 0};
-    transition: opacity 0.16s;
+    transition: opacity .16s;
     transition-delay: ${props => props.messageFieldTop<props.height-200 ? '.16s' : '0s'}
   }
   @media (min-width: 992px) {
@@ -324,7 +324,7 @@ export const Message = styled.textarea`
 
 export const SubmitBtnWrapper = styled.div`
   opacity:${props => props.messageFieldTop<props.height-200 ? 1 : 0};
-  transition: opacity 0.16s;
+  transition: opacity .16s;
   transition-delay: ${props => props.messageFieldTop<props.height-200 ? '.16s' : '0s'};
   @media (min-width:992px) {
     opacity:${props => props.messageFieldTop<props.height-300 ? 1 : 0};
