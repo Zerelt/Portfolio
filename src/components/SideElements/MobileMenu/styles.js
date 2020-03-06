@@ -108,6 +108,9 @@ export const Social = styled.a`
   svg{
     fill:${props => props.defaultTheme ? COLORS.WHITE : COLORS.DARKBLACK};
   }
+  .LinkedIn-dot{
+      fill: ${COLORS.ACCENT};
+  }
   opacity:${props => props.menuOpen ? 1 : 0};
   transform:${props => props.menuOpen ? 'translateX(0)' : 'translate(20px)'};
   ${(props)=>showSocials(props)};

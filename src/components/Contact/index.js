@@ -15,6 +15,7 @@ import {
   MessageLabel,
   UserInput,
   Message,
+  SubmitBtnWrapper,
   SubmitBtn
 } from './styles'
 
@@ -133,11 +134,12 @@ class Contact extends Component {
             </MessageBox>
 
           </InputContainer>
-          <SubmitBtn 
-            type='submit' title='Send Message'
-            messageFieldTop={messageFieldTop} height={height}>
-            <span>Send</span>
-          </SubmitBtn>
+          <SubmitBtnWrapper messageFieldTop={messageFieldTop} height={height}>
+            <SubmitBtn 
+              type='submit' title='Send Message'>
+              <span>Send</span>
+            </SubmitBtn>
+          </SubmitBtnWrapper>
         </ContactForm>
 
       </ContactContainer>

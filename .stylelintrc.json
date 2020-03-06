@@ -9,6 +9,7 @@
   "rules": {
     "font-family-no-missing-generic-family-keyword": null,
     "no-descending-specificity": null,
-    "declaration-block-no-shorthand-property-overrides": null
+    "declaration-block-no-shorthand-property-overrides": null,
+    "number-leading-zero":"never"
   }
 }

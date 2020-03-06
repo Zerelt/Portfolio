@@ -20,7 +20,7 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      defaultTheme: true, // true = black
+      defaultTheme: false, // true = black
       currentPage: '',
 
       height:window.innerHeight,
@@ -92,11 +92,6 @@ class App extends Component {
 
     const designTextTop = this.designsSection.children[0].getBoundingClientRect().top
     const designCarouselTop = this.designsSection.children[1].getBoundingClientRect().top
-    // const designText = this.designsSection.children[0]
-    // const designCards = this.designsSection.children[1]
-    
-    // console.log(designTextTop)
-    // console.log(designCarouselTop)
 
     const contactHeadlineTop = this.contactSection.children[0].getBoundingClientRect().top
     const nameFieldTop = this.contactSection.children[1].children[1].children[0].children[0].getBoundingClientRect().top

@@ -171,11 +171,15 @@ export const ProjectDescriptionSecondary = styled(ProjectDescription)`
   height:0;
   overflow:hidden;
   margin:0 0 32px 0;
+  span{
+    display:block;
+  }
   @media (min-width:650px) and (orientation: portrait) {
     margin:0 0 80px 0;
   }
   @media(min-width:992px) {
     height:auto;
+    overflow: visible;
   }
   @media(min-width:1600px) {
     margin:0 0 100px 0;
