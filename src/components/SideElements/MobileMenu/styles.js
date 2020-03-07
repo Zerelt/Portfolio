@@ -11,14 +11,14 @@ function showBorder(x) {
           border:${x.currentPage ? `2px solid ${COLORS.ACCENT}` : 'none'};
           transform:translateY(0px);
           opacity:1;
-          transition:all .18s ${.18*i}s ease-in;}
+          transition:transform .18s ${.18*i}s ease-in, opacity .18s ${.18*i}s ease-in;}
         `
     } else {
         styles+=`
         &:nth-child(${i}){
           transform:translateY(20px);
           opacity:0;
-          transition:all 0s 0s;}
+          transition:transform 0s 0s, opacity 0s 0s;}
           `
       }
     }

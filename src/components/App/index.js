@@ -7,6 +7,7 @@ import About from 'components/About';
 import Designs from 'components/Designs';
 import Work from 'components/Work';
 import Contact from 'components/Contact';
+import LightOrDark from 'components/LightOrDark'
 
 import COLORS from 'assets/theme/colors';
 import {
@@ -68,12 +69,14 @@ class App extends Component {
     this.infoOne = el;
   }
 
-  handleTheme = () => {
+  handleTheme = (status) => {
     const { defaultTheme } = this.state
-    this.setState({ defaultTheme: !defaultTheme },()=>{
-      const color = defaultTheme ? COLORS.DARKBLACK : COLORS.WHITE;
-      document.body.style.backgroundColor=color
-    })
+    if (status!==defaultTheme) {
+      this.setState({ defaultTheme: status },()=>{
+        const bgColor = defaultTheme ? COLORS.WHITE : COLORS.DARKBLACK;
+        document.body.style.backgroundColor=bgColor
+      })
+    }
   }
   
   handleResize = () => {
@@ -183,7 +186,12 @@ class App extends Component {
               defaultTheme={defaultTheme}
               currentPage={currentPage} 
               width={width}
+              handleTheme={this.handleTheme}
               handleNavClick={this.handleNavClick} 
+            />
+            <LightOrDark 
+              defaultTheme={defaultTheme}
+              handleTheme={this.handleTheme}
             />
             <Home 
               homeRef={el => {this.homeSection = el}}
