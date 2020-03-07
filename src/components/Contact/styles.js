@@ -234,7 +234,7 @@ export const NameLabel = styled.label`
   transition: all .2s;
   >span{
     opacity:${props => props.nameFieldTop<props.height-100 ? 1 : 0};
-    transition: opacity .16s;
+    transition: opacity .16s ease-out;
     transition-delay: ${props => props.nameFieldTop<props.height-100 ? '.16s' : '0s'}
   }
   @media(min-width: 768px) {
@@ -253,13 +253,13 @@ export const NameLabel = styled.label`
 export const EmailLabel = styled(NameLabel)`
   >span{
     opacity:${props => props.emailFieldTop<props.height-100 ? 1 : 0};
-    transition: opacity .16s;
+    transition: opacity .16s ease-out;
     transition-delay: ${props => props.emailFieldTop<props.height-100 ? '.16s' : '0s'}
   }
   @media(min-width:992px) {
     >span{
       opacity:${props => props.nameFieldTop<props.height-300 ? 1 : 0};
-      transition-delay: ${props => props.nameFieldTop<props.height-300 ? '1.16s' : '0s'}
+      transition-delay: ${props => props.nameFieldTop<props.height-300 ? '1s' : '0s'}
     }
   }
 `
@@ -267,14 +267,14 @@ export const EmailLabel = styled(NameLabel)`
 export const MessageLabel = styled(NameLabel)`
   >span{
     opacity:${props => props.messageFieldTop<props.height-200 ? 1 : 0};
-    transition: opacity .16s;
+    transition: opacity .16s ease-out;
     transition-delay: ${props => props.messageFieldTop<props.height-200 ? '.16s' : '0s'}
   }
   @media (min-width: 992px) {
     padding: 0 0 0 12px;
     >span{
       opacity:${props => props.messageFieldTop<props.height-300 ? 1 : 0};
-      transition-delay: ${props => props.messageFieldTop<props.height-300 ? '1.32s' : '0s'}
+      transition-delay: ${props => props.messageFieldTop<props.height-300 ? '1s' : '0s'}
     }
   }
 `
@@ -324,11 +324,12 @@ export const Message = styled.textarea`
 
 export const SubmitBtnWrapper = styled.div`
   opacity:${props => props.messageFieldTop<props.height-200 ? 1 : 0};
-  transition: opacity .16s;
+  transform:${props => props.messageFieldTop<props.height-300 ? 'translateY(0)' : 'translateY(50px)'};
+  transition: opacity .16s ease-out, transform .2s ease-out;
   transition-delay: ${props => props.messageFieldTop<props.height-200 ? '.16s' : '0s'};
   @media (min-width:992px) {
     opacity:${props => props.messageFieldTop<props.height-300 ? 1 : 0};
-    transition-delay: ${props => props.messageFieldTop<props.height-300 ? '1.48s' : '0s'}
+    transition-delay: ${props => props.messageFieldTop<props.height-300 ? '1.32s' : '0s'};
   }
 `
 
