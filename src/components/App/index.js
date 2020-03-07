@@ -50,12 +50,25 @@ class App extends Component {
   componentDidMount() {
     smoothscroll.polyfill();
 
+    let bgColor = ''
     const { defaultTheme } = this.state
+    const storedTheme = localStorage.getItem('defaultTheme')
+
+    if(storedTheme) {
+      this.setState({
+        defaultTheme: JSON.parse(storedTheme)
+      },()=>{
+        bgColor = JSON.parse(storedTheme) ? COLORS.DARKBLACK : COLORS.WHITE;
+        document.body.style.backgroundColor=bgColor
+      })
+    } else {
+      bgColor = defaultTheme ? COLORS.DARKBLACK : COLORS.WHITE;
+      document.body.style.backgroundColor=bgColor
+    }
+
     window.addEventListener('resize', this.handleResize)
     window.addEventListener('scroll', this.handleScroll)
     
-    const color = defaultTheme ? COLORS.DARKBLACK : COLORS.WHITE;
-    document.body.style.backgroundColor=color
     
     this.handleSidebar()
   }
@@ -71,9 +84,10 @@ class App extends Component {
 
   handleTheme = (status) => {
     const { defaultTheme } = this.state
+    localStorage.setItem('defaultTheme', status)
     if (status!==defaultTheme) {
       this.setState({ defaultTheme: status },()=>{
-        const bgColor = defaultTheme ? COLORS.WHITE : COLORS.DARKBLACK;
+        const bgColor = status===true ? COLORS.DARKBLACK : COLORS.WHITE;
         document.body.style.backgroundColor=bgColor
       })
     }
