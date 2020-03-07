@@ -7,7 +7,7 @@ export const fullCenter = `
 `
 
 export const resetInputStyle = `
-border: none;
-outline: transparent;
-color: ${COLORS.DARKBLACK};
+  border: none;
+  outline: transparent;
+  color: ${COLORS.DARKBLACK};
 `
