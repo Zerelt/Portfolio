@@ -83,6 +83,7 @@ export const LogoContainer = styled.div`
     }
     .TextBackground{
       fill: ${props=>props.defaultTheme ? COLORS.DARKBLACK : COLORS.WHITE};
+      transition:fill .16s ease-out;
     }
     .BlackAndWhite {
       fill: ${props=>props.defaultTheme ? COLORS.WHITE : COLORS.DARKBLACK};

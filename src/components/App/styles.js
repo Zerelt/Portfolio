@@ -75,7 +75,8 @@ export const GlobalStyles = createGlobalStyle`
     scrolling up a bit use see the app fullscreen
     easily on chrome and brave browsers */
     height:100vh;
-    background-color:${COLORS.DARKBLACK}
+    background-color:${COLORS.DARKBLACK};
+    transition:background-color .16s ease-out;
   }
   #app{
     height:100%;

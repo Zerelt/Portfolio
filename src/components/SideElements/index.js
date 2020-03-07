@@ -7,7 +7,7 @@ import SideBar from './SideBar';
 
 import { SideElementsContainer } from './styles'
 
-const SideElements = ({ defaultTheme, currentPage, handleNavClick, width }) => {
+const SideElements = ({ defaultTheme, currentPage, handleNavClick, width, handleTheme }) => {
   const [menuOpen, handleMenu] = useState(false)
 
   return(
@@ -23,6 +23,7 @@ const SideElements = ({ defaultTheme, currentPage, handleNavClick, width }) => {
         handleMenu={handleMenu} 
         width={width}
         handleNavClick={handleNavClick} 
+        handleTheme={handleTheme}
       />
       <SideBar 
         defaultTheme={defaultTheme} 
@@ -37,7 +38,8 @@ SideElements.propTypes = {
   defaultTheme: PropTypes.bool,
   currentPage: PropTypes.string,
   handleNavClick: PropTypes.func,
-  width: PropTypes.number
+  width: PropTypes.number,
+  handleTheme: PropTypes.func
 }
 
 export default hot(module)(SideElements)

@@ -1,6 +1,7 @@
 import { hot } from 'react-hot-loader'
 import React, { useEffect } from 'react'
 import PropTypes from 'prop-types'
+import LightOrDark from 'components/LightOrDark'
 import { Twitter, Github, LinkedIn } from 'assets/theme/social'
 import { 
   MobileMenuContainer, 
@@ -11,10 +12,10 @@ import {
   Social
 } from './styles'
 
-const MobileMenu = ({ defaultTheme, currentPage, menuOpen, handleMenu, handleNavClick, width })=> {
+const MobileMenu = ({ defaultTheme, currentPage, menuOpen, handleMenu, handleNavClick, width, handleTheme })=> {
   const handleButtonClick = (section)=>{
     handleNavClick(section);
-    handleMenu(false)
+    handleMenu(false);
   }
   useEffect(() => {
     if (width>1200) {
@@ -31,6 +32,7 @@ const MobileMenu = ({ defaultTheme, currentPage, menuOpen, handleMenu, handleNav
         defaultTheme={defaultTheme}>
         close
       </CloseButton>
+      <LightOrDark mobile defaultTheme={defaultTheme} handleTheme={handleTheme} />
       <ButtonContainer>
         <MobileButton 
           defaultTheme={defaultTheme}
@@ -101,7 +103,8 @@ MobileMenu.propTypes = {
   menuOpen: PropTypes.bool,
   handleMenu: PropTypes.func,
   handleNavClick: PropTypes.func,
-  width: PropTypes.number
+  width: PropTypes.number,
+  handleTheme: PropTypes.func
 }
 
 export default hot(module)(MobileMenu)
