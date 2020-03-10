@@ -397,8 +397,14 @@ export const DesignsButton = styled(WorkButton)`
   margin:20px 0 0 0;
   background-color: ${props=>props.defaultTheme ? COLORS.WHITE : COLORS.DARKBLACK};
   color: ${props=>props.defaultTheme ? COLORS.DARKBLACK : COLORS.WHITE};
+  box-shadow:${props => props.defaultTheme ?  '0px 0px 0px rgba(254,251,246,0.3)' : '0px 0px 0px rgba(5,5,5,0.3)'};
   @media (min-width:992px) {
     margin:120px 0 0 0;
+  }
+  @media(min-width:1200px) {
+    &:hover{
+      box-shadow:${props => props.defaultTheme ? '0px 8px 88px rgba(254,251,246,0.25)' : '0px 8px 88px rgba(5,5,5,0.3)'};
+    }
   }
 `
 
