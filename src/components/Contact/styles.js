@@ -48,7 +48,7 @@ export const ContactHeader = styled.p`
   font-family: 'Circular Black';
   color:${props => props.defaultTheme ? COLORS.WHITE : COLORS.DARKBLACK};
   text-align: left;
-  opacity:${props => props.contactHeadlineTop<props.height-300 ? 1 : 0};
+  opacity:${props => props.contactHeadlineTop<props.height-100 ? 1 : 0};
   transition: opacity .16s ease-in-out;
   span{
     color: ${COLORS.ACCENT};
@@ -57,6 +57,9 @@ export const ContactHeader = styled.p`
     width:100%;
     font-size:140px;
     line-height:148px;
+  }
+  @media(min-width:992px) {
+    opacity:${props => props.contactHeadlineTop<props.height-300 ? 1 : 0};
   }
   @media (min-width:1200px){
     font-size:160px;
