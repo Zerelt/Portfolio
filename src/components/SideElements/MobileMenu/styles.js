@@ -44,7 +44,7 @@ function showSocials(x) {
 export const MobileMenuContainer = styled.div`
   ${fullCenter};
   flex-direction:column;
-  height:100vh;
+  height:100%;
   width:100vw;
   position:fixed;
   top:0; 
@@ -102,6 +102,10 @@ export const CloseButton = styled.div`
   text-decoration:underline;
   text-decoration-color:${COLORS.ACCENT};
   cursor: pointer;
+  @media (min-width: 768px) {
+    top:32px;
+    right:32px;
+  }
 `
 
 export const Social = styled.a`

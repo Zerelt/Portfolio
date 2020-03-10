@@ -70,18 +70,14 @@ export const GlobalStyles = createGlobalStyle`
     background-color:${props=>props.defaultTheme ? COLORS.WHITE : COLORS.DARKBLACK};
   }
   html,body{
-    /* set root element to 100 H viewport units
-    so the user can hide the browser bar by
-    scrolling up a bit use see the app fullscreen
-    easily on chrome and brave browsers */
-    height:100vh;
+    height:100%;
+    width:100vw;
     background-color:${COLORS.DARKBLACK};
     transition:background-color .16s ease-out;
   }
   #app{
     height:100%;
     width:100%;
-    min-height:100vh;
     overflow: hidden;
     >div>div{
       overflow-x:hidden !important;

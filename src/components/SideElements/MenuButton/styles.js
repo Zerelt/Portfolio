@@ -16,6 +16,9 @@ export const MenuButtonContainer = styled.div`
     width:40px;
     height:30px;
   }
+  @media(min-width:768px) {
+    top:32px;
+  }
   @media(min-width:1200px){
     display:none;
   }

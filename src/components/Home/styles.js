@@ -5,12 +5,6 @@ import { MainButton } from 'assets/theme/button'
 
 
 
-// TODO: 
-// -give some love to phone landscape viewports
-
-
-
-
 function controlLines(lineNumber) {
   let styles = '';
   for (let i=1; i<=lineNumber; i++) {
@@ -35,16 +29,16 @@ function controlLines(lineNumber) {
 export const HomeContainer = styled.section`
   ${fullCenter}
   position:relative;
-  height:100vh;
+  flex-direction:column;
+  height:calc(100vh - 60px); /*take into account the top status bar on mobile */
   width:260px;
-  @media (min-width:650px) and (orientation:landscape) {
-    width:100%;
+  @media (orientation:landscape) {
     width:500px;
   }
-  @media(min-width:768px) {
-    width:500px;
+  @media(min-width:768px) and (orientation:portrait) {
     display:flex;
-    flex-direction:column;
+    width:500px;
+    height:100vh;
   }
   @media(min-width:992px) {
     width:850px;
@@ -62,6 +56,12 @@ export const HomeContainerInner = styled.div`
   ${fullCenter}
   width:100%;
   flex-direction:column;
+  @media (orientation:landscape) and (min-height:500px) {
+    position:relative;
+    align-items:stretch;
+    flex-direction:row-reverse;
+    justify-content: space-between;
+  }
   @media (min-width:768px){
     position:relative;
     align-items:stretch;
@@ -141,13 +141,23 @@ export const LogoContainer = styled.div`
     }
   }
   
-  @media (min-width:560px) and (orientation:landscape) {
+  @media (orientation:landscape) {
     .LogoSm{
       display:block;
       height:188px;
     }
   }
-  @media(min-width:768px) {
+  @media (orientation: landscape) and (min-height:500px) {
+    .LogoSm{
+      display:none;
+    }
+    .LogoMd{
+      display:block;
+      height:350px;
+      margin:0 -30px 0 0;
+    }
+  }
+  @media(min-width:768px) and (orientation:portrait) {
     .LogoSm{
       display:none;
     }
@@ -180,9 +190,16 @@ export const LogoContainer = styled.div`
 `
 
 export const HeadlineAndButtons = styled.div`
-  @media(min-width:768px) {
-    ${fullCenter};
-    position:relative;
+  position:relative;
+  height:280px;
+  width:100%;
+  ${fullCenter};
+  @media(orientation:landscape) {
+    height:auto;
+  }
+  @media(min-width:768px) and (orientation:portrait) {
+    height:auto;
+    width:auto;
   }
   @media(min-width:992px) {
     display:flex;
@@ -212,21 +229,28 @@ export const DecorationBox = styled.div`
 `
 
 export const DecorationBoxMd = styled.div`
-  display:none;
-  @media(min-width:768px) {
+  position:absolute;
+  top: ${props => props.secondary ? 0 : 'auto'};
+  right: ${props => props.secondary ? 0 : 'auto'};
+  bottom: ${props => props.secondary ? 'auto' : 0};
+  left: ${props => props.secondary ? 'auto' : 0};
+  margin:auto;
+  height:100px;
+  width:153px;
+  opacity: ${props=>props.pageLoaded ? 1 : 0};
+  transform: ${props=>props.pageLoaded ? 'translateX(0px)':'translateX(-20px)'};
+  transition:opacity .12s, ease-in-out, transform .12s;
+  transition-delay: ${props => props.secondary ? '.85s' : '.65s'};
+  @media(orientation:landscape) and (max-height:500px) {
+    display:none;
+  }
+  @media(orientation:landscape) and (min-height:500px) {
     display:block;
-    position:absolute;
-    top: ${props => props.secondary ? 0 : 'auto'};
+  }
+  @media(min-width:768px) and (orientation:portrait) {
     right: ${props => props.secondary ? '7px' : 'auto'};
-    bottom: ${props => props.secondary ? 'auto' : 0};
-    left: ${props => props.secondary ? 'auto' : 0};
-    margin:auto;
-    height:100px;
-    width:153px;
-    opacity: ${props=>props.pageLoaded ? 1 : 0};
-    transform: ${props=>props.pageLoaded ? 'translate(15px,0px)':'translateX(0,20px)'};
-    transition:opacity .12s, ease-in-out, transform .12s;
-    transition-delay: ${props => props.secondary ? '3.6s' : '3.4s'}
+    transform: ${props=>props.pageLoaded ? 'translateX(15px)':'translateX(0)'};
+    transition-delay: ${props => props.secondary ? '3.6s' : '3.4s'};
   }
   @media(min-width:992px) {
     display:none;
@@ -234,10 +258,10 @@ export const DecorationBoxMd = styled.div`
 `
 
 export const Headline = styled.div`
-  margin:0 0 60px 0;
+  max-width:220px;
   font-family: ${props=>props.defaultTheme ? 'Circular' : 'Circular Medium'};
-  font-size: 56px;
-  line-height:60px;
+  font-size: 36px;
+  line-height: 42px;
   color: ${props=>props.defaultTheme ? COLORS.WHITE : COLORS.DARKBLACK};
   opacity: ${props=>props.pageLoaded ? 1 : 0};
   transform: ${props=>props.pageLoaded ? 'translateY(0)':'translateY(15px)'};
@@ -245,18 +269,23 @@ export const Headline = styled.div`
   span{
     color:${COLORS.ACCENT};
   }
-  @media (min-width:560px) and (orientation:landscape) and (max-height:450px) {
+  @media (orientation:landscape) {
     display:flex;
     align-items:center;
     justify-content:space-between;
     flex-direction:row;
+    max-width:none;
     font-size:40px;
     line-height:58px;
-    margin:0 0 20px 0;
-    transition:opacity .12s 3.2s, transform .12s 3.2s;
+    transition:opacity .12s .2s, transform .12s .2s;
   }
-  @media(min-width:768px) {
+  @media (orientation:landscape) and (min-height:500px) {
+    max-width:260px;
+  }
+  @media(min-width:768px) and (orientation:portrait) {
     font-family: 'Circular Medium';
+    font-size:56px;
+    line-height:60px;
     margin:0 0 0 50px;
     max-width:255px;
     transition:opacity .18s 3.2s, transform .18s 3.2s;
@@ -283,25 +312,16 @@ export const Headline = styled.div`
 `
 
 export const ButtonBox = styled.div`
-  opacity:${props=>props.pageLoaded ? 1 : 0};
-  transform:${props => props.pageLoaded ? 'translateY(0)': 'translateY(20px)'};
-  transition:opacity .18s .56s, transform .18s .56s;
-  @media (min-width:560px) and (orientation:landscape) {
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    flex-direction:row-reverse;
-  }
-  @media(min-width:768px) {
-    display:none;
-  }
+  display:none;
   @media(min-width:992px) {
     display:flex;
     flex-direction:row;
     justify-content:space-between;
     width:100%;
     max-width:565px;
-    transition:opacity .14s 3.8s, transform .14s 3.8s;
+    opacity:${props=>props.pageLoaded ? 1 : 0};
+    transform:${props => props.pageLoaded ? 'translateY(0)': 'translateY(20px)'};
+    transition:opacity .18s .56s, transform .18s .56s;
   }
   @media(min-width:1600px) {
     max-width:600px;
@@ -309,15 +329,24 @@ export const ButtonBox = styled.div`
 `
 
 export const ButtonBox2 = styled.div`
-  display:none;
-  @media(min-width:768px) {
-    display:flex;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  width:100%;
+  height:110px;
+  margin:48px 0;
+  opacity:${props=>props.pageLoaded ? 1 : 0};
+  transform:${props => props.pageLoaded ? 'translateY(0)': 'translateY(20px)'};
+  transition:opacity .14s 1.05s, transform .14s 1.05s;
+  @media(orientation:landscape) {
     flex-direction:row;
-    justify-content:space-between;
-    width:100%;
+    margin:48px 0 0 0;
+    height:auto;
+  }
+  @media(min-width:768px) and (orientation:portrait) {
+    flex-direction:row;
+    height:auto;
     margin:135px 0 0 0;
-    opacity:${props=>props.pageLoaded ? 1 : 0};
-    transform:${props => props.pageLoaded ? 'translateY(0)': 'translateY(20px)'};
     transition:opacity .14s 3.8s, transform .14s 3.8s;
   }
   @media(min-width:992px) {
@@ -327,13 +356,18 @@ export const ButtonBox2 = styled.div`
 
 export const MidButton = styled.button`
   ${MainButton};
-  width:240px !important;
   height:46px !important;
   font-family: 'Circular' !important;
   font-size:20px !important;
   &:nth-child(2){
     background-color:${props => props.defaultTheme ? COLORS.WHITE : COLORS.DARKBLACK};
     color:${props => props.defaultTheme ? COLORS.DARKBLACK : COLORS.WHITE};
+  }
+  @media(orientation:landscape) {
+    width:240px !important;
+  }
+  @media(min-width:768px) and (orientation:portrait) {
+    width:240px !important;
   }
 `
 
@@ -360,12 +394,6 @@ export const DesignsButton = styled(WorkButton)`
   margin:20px 0 0 0;
   background-color: ${props=>props.defaultTheme ? COLORS.WHITE : COLORS.DARKBLACK};
   color: ${props=>props.defaultTheme ? COLORS.DARKBLACK : COLORS.WHITE};
-  @media(min-width:560px) and (orientation:landscape) {
-    margin:0;
-  }
-  @media(min-width:768px){
-    margin:0;
-  }
   @media (min-width:992px) {
     margin:120px 0 0 0;
   }
@@ -392,29 +420,18 @@ export const ButtonDot = styled.span`
   }
 `
 
-
 export const SocialBox = styled.div`
-  ${fullCenter}
-  justify-content:space-between;
   width:115px;
   height:18px;
-  position:absolute;
-  bottom:16px;
-  left:0;
-  right:0;
-  margin:auto;
+  ${fullCenter}
+  justify-content:space-between;
+  display:none; /* SocialBox2 is used below 992px (portrait) */
   .Twitter, .Github{
     path{
       fill:${props=> props.defaultTheme ? COLORS.WHITE : COLORS.DARKBLACK};
     }
-    opacity:${props=>props.pageLoaded ? 1 : 0};
-    transform:${props=>props.pageLoaded ? 'translateY(0)' : 'translateY(15px)'};
-    transition:opacity .22s .9s, transform .14s .9s ease-in;
   }
   .LinkedIn {
-    opacity:${props=>props.pageLoaded ? 1 : 0};
-    transform:${props=>props.pageLoaded ? 'translateY(0)' : 'translateY(15px)'};
-    transition:opacity .22s 1.12s, transform .14s 1.12s ease-in;
     &-I, rect{
       fill:${props=> props.defaultTheme ? COLORS.WHITE : COLORS.DARKBLACK};
     }
@@ -422,21 +439,13 @@ export const SocialBox = styled.div`
       fill: ${COLORS.ACCENT};
     }
   }
-  .Github{
-    transition:opacity .22s 1.42s, transform .14s 1.42s ease-in;
-  }
-  @media(orientation:landscape) {
-    display:none;
-  }
-  @media(min-width:768px) {
-    display:none;
-  }
   @media(min-width:992px) {
     display:flex;
+    position:absolute;
     left:0;
-    bottom:0px;
-    right:auto;
+    bottom:0;
     .Twitter, .LinkedIn, .Github {
+      opacity:${props=>props.pageLoaded ? 1 : 0};
       transform:${props=>props.pageLoaded ? 'translateX(0)' : 'translateX(-15px)'};
     }
     .Twitter{
@@ -452,17 +461,30 @@ export const SocialBox = styled.div`
 `
 
 export const SocialBox2 = styled(SocialBox)`
-  display:none;
-  @media(min-width:768px) {
-    display:flex;
-    position:absolute;
+  display:flex;
+  position:absolute;
+  bottom:16px;
+  left:0;
+  right:0;
+  margin:auto;
+  .Twitter, .LinkedIn, .Github {
+    opacity:${props=>props.pageLoaded ? 1 : 0};
+    transform:${props=>props.pageLoaded ? 'translateX(0)' : 'translateX(-15px)'};
+  }
+  .Twitter{
+    transition:opacity .22s 1.25s, transform .14s 1.25s;
+  }
+  .LinkedIn{
+    transition:opacity .22s 1.45s, transform .14s 1.45s;
+  }
+  .Github{
+    transition:opacity .22s 1.65s, transform .14s 1.65s;
+  }
+  @media(orientation:landscape) {
+    display:none;
+  }
+  @media(min-width: 768px) {
     bottom:64px;
-    left:0;
-    right:0;
-    margin:auto;
-    .Twitter, .LinkedIn, .Github {
-      transform:${props=>props.pageLoaded ? 'translateX(0)' : 'translateX(-15px)'};
-    }
     .Twitter{
       transition:opacity .22s 4s, transform .14s 4s;
     }
