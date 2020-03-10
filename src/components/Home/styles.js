@@ -32,6 +32,9 @@ export const HomeContainer = styled.section`
   flex-direction:column;
   height:calc(100vh - 60px); /*take into account the top status bar on mobile */
   width:260px;
+  @media (orientation:portrait) {
+    min-height:520px;
+  }
   @media (orientation:landscape) {
     width:500px;
   }
@@ -321,7 +324,7 @@ export const ButtonBox = styled.div`
     max-width:565px;
     opacity:${props=>props.pageLoaded ? 1 : 0};
     transform:${props => props.pageLoaded ? 'translateY(0)': 'translateY(20px)'};
-    transition:opacity .18s .56s, transform .18s .56s;
+    transition:opacity .14s 3.8s, transform .14s 3.8s;
   }
   @media(min-width:1600px) {
     max-width:600px;

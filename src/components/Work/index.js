@@ -1,8 +1,8 @@
 import { hot } from 'react-hot-loader'
 import React from 'react'
 import PropTypes from 'prop-types'
-import AppTpe from 'assets/images/TPE-App 140S 700H.png'
-import WebTpe from 'assets/images/TPE-Web 140S 700H.png'
+import AppTpe from 'assets/images/Red-TPE-App 128S 700H.png'
+import WebTpe from 'assets/images/Red-TPE-Web 128s 700H.png'
 
 import {
   WorkContainer,
@@ -32,7 +32,7 @@ const projects = [
     "title": "The Prospect Exchange",
     "description": "Marketing website for The Prospect Exchange with separate pages for Coaches and Player audiences",
     "image": WebTpe,
-    "live": "https://theprospectexchange.com",
+    "live": "https://www.theprospectexchange.com",
     "secondaryDescription": {
       "mainTools": "React, styled components, React Router, Git",
       "otherTools": "Slack, Clubhouse, Zeplin, Sendgrid, Drift, Google cloud platform, Illustrator, Photoshop"
