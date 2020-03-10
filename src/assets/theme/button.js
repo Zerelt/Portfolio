@@ -15,7 +15,7 @@ export const MainButton = `
   background-color:${COLORS.ACCENT};
   border:none;
   border-radius:40px;
-  box-shadow:0px 0px 0px 0px rgba(243, 177, 0, 0.3);
+  box-shadow:0px 0px 0px rgba(255,87,87,0.3);
   transition:box-shadow .14s, transform 0.14s;
   text-decoration:none;
   overflow: hidden;
@@ -28,7 +28,7 @@ export const MainButton = `
   }
   @media(min-width:1200px){
     &:hover{
-      box-shadow:0px 3px 88px rgba(243, 177, 0, 0.42);
+      box-shadow:0px 8px 88px rgba(255,87,87,0.53);
       transform:translateY(-3px);
       transition:box-shadow .14s, transform 0.18s;
     }
