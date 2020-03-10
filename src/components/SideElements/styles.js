@@ -10,6 +10,9 @@ export const SideElementsContainer = styled.div`
   right:16px;
   margin:auto;
   z-index: 2;
+  @media(min-width:768px) {
+    right:32px;
+  }
   @media (min-width:1200px){
     right:6.2vw;
   }
