@@ -2,7 +2,7 @@ import { hot } from 'react-hot-loader'
 import React from 'react'
 import PropTypes from 'prop-types'
 import AppTpe from 'assets/images/Red-TPE-App 128S 700H.png'
-import WebTpe from 'assets/images/Red-TPE-Web 128s 700H.png'
+import WebTpe from 'assets/images/Red-TPE-Web 128S 700H.png'
 
 import {
   WorkContainer,
