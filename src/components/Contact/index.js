@@ -82,6 +82,7 @@ class Contact extends Component {
                   defaultTheme={defaultTheme} 
                   type='text' required 
                   autoComplete='off'
+                  id='name'
                   name='name'
                   className='userInput'
                   onChange={(e)=>this.handleInputChange(e)} 
@@ -101,6 +102,7 @@ class Contact extends Component {
                   defaultTheme={defaultTheme} 
                   type='text' required 
                   autoComplete='off'
+                  id='email'
                   name='email'
                   className='userInput'
                   onChange={(e)=>this.handleInputChange(e)} 
@@ -120,6 +122,7 @@ class Contact extends Component {
               <Message 
                 defaultTheme={defaultTheme}
                 required
+                id='message'
                 name='message'
                 className='message'
                 onChange={(e)=>this.handleInputChange(e)} 
