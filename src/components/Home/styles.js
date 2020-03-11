@@ -176,12 +176,17 @@ export const LogoContainer = styled.div`
       margin:0;
     }
   }
-  @media(min-width:1400px) {
+  @media(min-width:1200px) {
     .LogoMd{
       display:none;
     }
     .LogoLg{
       display:block;
+      height:525px;
+    }
+  }
+  @media (min-width:1400px) {
+    .LogoLg{
       height:650px;
     }
   }
@@ -287,8 +292,8 @@ export const Headline = styled.div`
   }
   @media(min-width:768px) and (orientation:portrait) {
     font-family: 'Circular Medium';
-    font-size:56px;
-    line-height:60px;
+    font-size:50px;
+    line-height:54px;
     margin:0 0 0 50px;
     max-width:255px;
     transition:opacity .18s 3.2s, transform .18s 3.2s;
