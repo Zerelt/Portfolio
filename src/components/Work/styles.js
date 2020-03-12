@@ -127,7 +127,7 @@ export const ProjectInfoContainer = styled.div`
   color: ${props => props.defaultTheme ? COLORS.WHITE : COLORS.DARKBLACK};
 `
 
-export const ProjectTitle = styled.p`
+export const ProjectTitle = styled.h3`
   font-size:28px;
   font-family: 'Circular Black';
   letter-spacing: -1.5px;

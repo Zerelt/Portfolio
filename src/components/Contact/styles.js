@@ -25,9 +25,11 @@ export const ContactContainer = styled.section`
   inputs are the cursor goes inside the inputs */
   @media (min-width:768px){
     width:500px;
+    min-height:825px;
   }
   @media (min-width:992px){
     height:90vh;
+    min-height:875px;
     width:850px;
     justify-content:center;
     padding:0;
@@ -35,13 +37,14 @@ export const ContactContainer = styled.section`
   }
   @media(min-width:1200px){
     width:950px;
+    min-height:950px;
   }
   @media(min-width:1600px) {
     width:1300px;
   }
 `
 
-export const ContactHeader = styled.p`
+export const ContactHeader = styled.h2`
   width:260px;
   font-size:32px;
   font-size:42px;
