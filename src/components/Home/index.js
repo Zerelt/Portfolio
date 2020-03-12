@@ -56,7 +56,7 @@ const Home = ({ homeRef, defaultTheme, handleNavClick })=> {
           </DecorationBoxMd>
           
           <Headline defaultTheme={defaultTheme} pageLoaded={pageLoaded}>
-            <p>Front-end engineer <span>and</span> UX designer</p>
+            <h1>Front-end engineer <span>and</span> UX designer</h1>
             <LogoContainer defaultTheme={defaultTheme} pageLoaded={pageLoaded}>
               <LogoSm />
             </LogoContainer>

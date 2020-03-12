@@ -274,6 +274,12 @@ export const Headline = styled.div`
   opacity: ${props=>props.pageLoaded ? 1 : 0};
   transform: ${props=>props.pageLoaded ? 'translateY(0)':'translateY(15px)'};
   transition:opacity .18s .28s, transform .18s .28s ease-in;
+  h1{
+    font-family:inherit;
+    font-weight:inherit;
+    font-size:inherit;
+    line-height:inherit;
+  }
   span{
     color:${COLORS.ACCENT};
   }
