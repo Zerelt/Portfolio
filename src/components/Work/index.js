@@ -74,7 +74,6 @@ const Work = ({ workRef, defaultTheme, projectOneTop, projectTwoTop, projectThre
                   <br />
                   {project.secondaryDescription.mainTools}.
                 </span>
-                <br />
                 <span className={`projectInfoOther-${id}`}>
                   <br />
                   Other Tools:
