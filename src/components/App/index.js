@@ -60,10 +60,20 @@ class App extends Component {
       },()=>{
         bgColor = JSON.parse(storedTheme) ? COLORS.DARKBLACK : COLORS.WHITE;
         document.body.style.backgroundColor=bgColor
+        // add transition here, to avoid seeing a background
+        // flash effect when the saved theme is Dark
+        setTimeout(()=>{
+          document.body.style.transition='background-color .16s ease-out'
+        },300)
       })
     } else {
       bgColor = defaultTheme ? COLORS.DARKBLACK : COLORS.WHITE;
       document.body.style.backgroundColor=bgColor
+      // add transition here, since it's not added in the app style.js, 
+      // to have a nice effect when the user decides to switch themes
+      setTimeout(()=>{
+        document.body.style.transition='background-color .16s ease-out'
+      },300)
     }
 
     window.addEventListener('resize', this.handleResize)

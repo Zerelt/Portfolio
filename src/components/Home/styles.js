@@ -76,6 +76,8 @@ export const HomeContainerInner = styled.div`
 export const LogoContainer = styled.div`
   ${fullCenter}
   position:relative;
+  opacity:${props => props.pageLoaded ? 1 : 0};
+  transition:opacity .16s .16s; /* so the TextBackground doesn't flash */
   .LogoSm, .LogoMd, .LogoLg {
     display:none;
     line{
