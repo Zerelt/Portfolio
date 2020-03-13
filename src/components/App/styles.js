@@ -72,8 +72,6 @@ export const GlobalStyles = createGlobalStyle`
   html,body{
     height:100%;
     width:100vw;
-    background-color:${COLORS.DARKBLACK};
-    transition:background-color .16s ease-out;
   }
   #app{
     height:100%;
