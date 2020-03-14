@@ -14,16 +14,20 @@ function revealWords(wordCountStart,wordCountEnd) {
       styles +=`
       .words-revealed-${i} {
          opacity:1;
-          transition:opacity .2s ${i*.07}s ease-in-out;
+          transition:opacity .2s ${i*.035}s ease-in;
         }
       `
     }
   } else {
+    // this else condition isn't needed anymore
+    // keeping it here for now in case I decide to
+    // display the second half of the text depending
+    // on a different reveal point
     for (let i=wordCountStart; i<=wordCountEnd; i++) {
       styles+=`
       .words-revealed-${i} {
           opacity:1;
-          transition:opacity .2s ${i*.035}s ease-in-out;
+          transition:opacity .2s ${i*.035}s ease-in;
         }
       `
     }
@@ -38,13 +42,17 @@ function underlineKeywords(wordCountStart,wordCountEnd) {
       styles+=`
         .keywords-underlined-${i} {
           width:100%;
-          transition:width .2s ease-in-out;
-          transition-delay: ${(i*.15) + 1.8}s;
+          transition:width .1s ease-in-out;
+          transition-delay: ${(i*.075) + .7}s;
           z-index:-1;
         }
       `
     } 
   } else {
+    // this else condition isn't needed anymore
+    // keeping it here for now in case I decide to
+    // display the second half of the text depending
+    // on a different reveal point
       for(let i=wordCountStart;i<=wordCountEnd;i++){
         styles+=`
           .keywords-underlined-${i} {
