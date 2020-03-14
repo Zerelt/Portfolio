@@ -96,7 +96,7 @@ const About = React.forwardRef((props,ref) => {
         <Words className='words-revealed-26'>components, </Words>
         <Words className='words-revealed-27'>
           <Keywords className='keywords'>
-            React, <span className='keywords-underlined-11' />
+            React <span className='keywords-underlined-11' />
           </Keywords>
         </Words>
         <Words className='words-revealed-28'>
@@ -111,7 +111,7 @@ const About = React.forwardRef((props,ref) => {
         </Words>
         <Words className='words-revealed-30'>
           <Keywords className='keywords'>
-            JSON,<span className='keywords-underlined-14' />
+            JSON<span className='keywords-underlined-14' />
           </Keywords>
         </Words>
         <Words className='words-revealed-31'> and </Words>
