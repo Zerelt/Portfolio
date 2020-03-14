@@ -3,7 +3,8 @@ import COLORS from 'assets/theme/colors';
 import { fullCenter } from 'assets/theme/mixins'
 import { MainButton } from 'assets/theme/button'
 
-
+// TODO:
+// -give some love to landscape mode
 
 function controlLines(lineNumber) {
   let styles = '';
@@ -11,14 +12,14 @@ function controlLines(lineNumber) {
     if (lineNumber===52) {
       styles +=`
         .LogoLine-${i} {
-          animation-delay: ${1 + i/33}s;
+          animation-delay: ${1 + i/63}s;
         }
       `
     }
     else {
       styles +=`
       .LogoLine-${i} {
-        animation-delay: ${1 + i/11}s;
+        animation-delay: ${1 + i/21}s;
       }
       `
     }
@@ -113,7 +114,7 @@ export const LogoContainer = styled.div`
       animation-fill-mode:forwards;
     }
     .BlackAndWhite, .ColorLetters {
-      transition:opacity .18s 2.7s ease-in-out;
+      transition:opacity .18s 2.1s ease-in-out;
     }
     ${props => {if (props.pageLoaded) { return controlLines(20)}}};
     @keyframes LineAnimation-Md {
@@ -133,7 +134,7 @@ export const LogoContainer = styled.div`
       animation-fill-mode:forwards;
     }
     .BlackAndWhite, .ColorLetters {
-      transition:opacity .18s 2.7s ease-in-out;
+      transition:opacity .18s 2s ease-in-out;
     }
     ${props => {if (props.pageLoaded) {return controlLines(52)}}};
     @keyframes LineAnimation-Lg {
@@ -229,12 +230,12 @@ export const DecorationBox = styled.div`
     display:block;
     width:156px;
     opacity: ${props=>props.pageLoaded ? 1 : 0};
-    transform: ${props=>props.pageLoaded ? 'translate(4px,20px)':'translateX(0,20px)'};
-    transition:opacity .12s 3.4s ease-in-out, transform .12s 3.4s;
+    transform: ${props=>props.pageLoaded ? 'translate(4px,20px)':'translate(-20px,20px)'};
+    transition:opacity .12s 2.6s ease-in-out, transform .14s 2.6s;
   }
   @media(min-width:1600px) {
     width:222px;
-    transform: ${props=>props.pageLoaded ? 'translate(5px,5px)':'translateX(0,20px)'};
+    transform: ${props=>props.pageLoaded ? 'translate(5px,5px)':'translate(-20px,20px)'};
   }
 `
 
@@ -260,7 +261,7 @@ export const DecorationBoxMd = styled.div`
   @media(min-width:768px) and (orientation:portrait) {
     right: ${props => props.secondary ? '7px' : 'auto'};
     transform: ${props=>props.pageLoaded ? 'translateX(15px)':'translateX(0)'};
-    transition-delay: ${props => props.secondary ? '3.6s' : '3.4s'};
+    transition-delay: ${props => props.secondary ? '2.4s' : '2.2s'};
   }
   @media(min-width:992px) {
     display:none;
@@ -304,7 +305,7 @@ export const Headline = styled.div`
     line-height:54px;
     margin:0 0 0 50px;
     max-width:255px;
-    transition:opacity .18s 3.2s, transform .18s 3.2s;
+    transition:opacity .18s 2.6s, transform .18s 2.6s;
   }
   @media(min-width: 992px){
     max-width:530px;
@@ -313,7 +314,7 @@ export const Headline = styled.div`
     font-size:48px;
     text-align: left;
     line-height: 63px;
-    transition:opacity .12s 3.2s, transform .12s 3.2s;
+    transition:opacity .12s 2.5s, transform .12s 2.5s;
   }
   @media(min-width:1400px) {
     font-size:56px;
@@ -337,7 +338,7 @@ export const ButtonBox = styled.div`
     max-width:565px;
     opacity:${props=>props.pageLoaded ? 1 : 0};
     transform:${props => props.pageLoaded ? 'translateY(0)': 'translateY(20px)'};
-    transition:opacity .14s 3.8s, transform .14s 3.8s;
+    transition:opacity .18s 2.7s ease-out, transform .16s 2.7s ease-out;
   }
   @media(min-width:1600px) {
     max-width:600px;
@@ -363,7 +364,7 @@ export const ButtonBox2 = styled.div`
     flex-direction:row;
     height:auto;
     margin:135px 0 0 0;
-    transition:opacity .14s 3.8s, transform .14s 3.8s;
+    transition:opacity .14s 2.8s, transform .14s 2.8s;
   }
   @media(min-width:992px) {
     display:none;
@@ -471,13 +472,13 @@ export const SocialBox = styled.div`
       transform:${props=>props.pageLoaded ? 'translateX(0)' : 'translateX(-15px)'};
     }
     .Twitter{
-      transition:opacity .22s 4s, transform .14s 4s;
+      transition:opacity .22s 2.8s, transform .14s 2.8s;
     }
     .LinkedIn{
-      transition:opacity .22s 4.2s, transform .14s 4.2s;
+      transition:opacity .16s 2.94s, transform .14s 2.94s;
     }
     .Github{
-      transition:opacity .22s 4.4s, transform .14s 4.4s;
+      transition:opacity .22s 3.08s, transform .14s 3.08s;
     }
   }
 `
@@ -508,13 +509,13 @@ export const SocialBox2 = styled(SocialBox)`
   @media(min-width: 768px) {
     bottom:64px;
     .Twitter{
-      transition:opacity .22s 4s, transform .14s 4s;
+      transition:opacity .22s 2.9s, transform .14s 2.9s;
     }
     .LinkedIn{
-      transition:opacity .22s 4.2s, transform .14s 4.2s;
+      transition:opacity .22s 3.04s, transform .14s 3.04s;
     }
     .Github{
-      transition:opacity .22s 4.4s, transform .14s 4.4s;
+      transition:opacity .22s 3.18s, transform .14s 3.18s;
     }
   }
   @media(min-width:992px){
