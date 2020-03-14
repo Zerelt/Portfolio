@@ -251,7 +251,7 @@ export const NameLabel = styled.label`
   @media(min-width:992px) {
     >span{
       opacity:${props => props.nameFieldTop<props.height-300 ? 1 : 0};
-      transition-delay: ${props => props.nameFieldTop<props.height-300 ? '1s' : '0s'}
+      transition-delay: ${props => props.nameFieldTop<props.height-300 ? '.6s' : '0s'}
     }
   }
 `
@@ -265,7 +265,7 @@ export const EmailLabel = styled(NameLabel)`
   @media(min-width:992px) {
     >span{
       opacity:${props => props.nameFieldTop<props.height-300 ? 1 : 0};
-      transition-delay: ${props => props.nameFieldTop<props.height-300 ? '1s' : '0s'}
+      transition-delay: ${props => props.nameFieldTop<props.height-300 ? '.6s' : '0s'}
     }
   }
 `
@@ -280,7 +280,7 @@ export const MessageLabel = styled(NameLabel)`
     padding: 0 0 0 12px;
     >span{
       opacity:${props => props.messageFieldTop<props.height-300 ? 1 : 0};
-      transition-delay: ${props => props.messageFieldTop<props.height-300 ? '1s' : '0s'}
+      transition-delay: ${props => props.messageFieldTop<props.height-300 ? '.6s' : '0s'}
     }
   }
 `
@@ -335,7 +335,7 @@ export const SubmitBtnWrapper = styled.div`
   transition-delay: ${props => props.messageFieldTop<props.height-200 ? '.16s' : '0s'};
   @media (min-width:992px) {
     opacity:${props => props.messageFieldTop<props.height-300 ? 1 : 0};
-    transition-delay: ${props => props.messageFieldTop<props.height-300 ? '1.32s' : '0s'};
+    transition-delay: ${props => props.messageFieldTop<props.height-300 ? '.8s' : '0s'};
   }
 `
 
