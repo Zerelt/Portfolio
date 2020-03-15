@@ -67,7 +67,7 @@ export const WorkContainer = styled.section`
   }
   @media(min-width:992px){
     padding:0;
-    margin:15% 0;
+    margin:4% 0 15% 0;
   }
 `
 

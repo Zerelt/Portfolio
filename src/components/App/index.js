@@ -142,34 +142,35 @@ class App extends Component {
   }
 
   handleSidebar = () =>{
-    const { height } = this.state
+    const { height,width } = this.state
+    const lastBreakpoint = width>=992 ? 300 : 100
     const home = this.homeSection.getBoundingClientRect().top
-    const about = this.aboutSection.getBoundingClientRect().top
-    const work = this.workSection.getBoundingClientRect().top
-    const designs = this.designsSection.getBoundingClientRect().top
-    const contact = this.contactSection.getBoundingClientRect().top
+    const infoOneTopValue = this.infoOne.getBoundingClientRect().top
+    const projectOneTop = this.workSection.children[0].getBoundingClientRect().top
+    const designTextTop = this.designsSection.children[0].getBoundingClientRect().top
+    const contactHeadlineTop = this.contactSection.children[0].getBoundingClientRect().top
 
-    if(home<=height/3 && about>height/3) {
+    if(home<=height/2 && infoOneTopValue>height/2) {
       this.setState({
         currentPage: 'home'
       })
     }
-    if(about<=(height/3) && work>height/3 ) {
+    if(infoOneTopValue<=(height/2) && projectOneTop>height/2 ) {
       this.setState({
         currentPage: 'about'
       })
     } 
-    if (work<=(height/3) && designs>height/3) {
+    if (projectOneTop<=(height/2) && designTextTop>height/2) {
       this.setState({
         currentPage: 'work'
       })
     } 
-    if (designs<=(height/3) && contact>height/3) {
+    if (designTextTop<=(height/2) && contactHeadlineTop>height - lastBreakpoint) {
       this.setState({
         currentPage: 'designs'
       })
     } 
-    if(contact<=(height/3)) {
+    if(contactHeadlineTop<=height - lastBreakpoint) {
       this.setState({
         currentPage: 'contact'
       })
