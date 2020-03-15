@@ -58,7 +58,7 @@ const Work = ({ workRef, defaultTheme, projectOneTop, projectTwoTop, projectThre
   return (
     <WorkContainer ref={workRef}>
       {projects.map((project, id)=>{
-        const projectVisible=topDistancesArray[id]<=height/3.5
+        const projectVisible=topDistancesArray[id]<=height/2
         return(
           <Project key={id} projectVisible={projectVisible}>
             <ProjectImageContainer className={`imageContainer-${id}`}>

@@ -51,7 +51,7 @@ export const ContactHeader = styled.h2`
   font-family: 'Circular Black';
   color:${props => props.defaultTheme ? COLORS.WHITE : COLORS.DARKBLACK};
   text-align: left;
-  opacity:${props => props.contactHeadlineTop<props.height-100 ? 1 : 0};
+  opacity:${props => props.contactHeadlineTop<=props.height-100 ? 1 : 0};
   transition: opacity .16s ease-in-out;
   span{
     color: ${COLORS.ACCENT};
@@ -62,7 +62,7 @@ export const ContactHeader = styled.h2`
     line-height:148px;
   }
   @media(min-width:992px) {
-    opacity:${props => props.contactHeadlineTop<props.height-300 ? 1 : 0};
+    opacity:${props => props.contactHeadlineTop<=props.height-300 ? 1 : 0};
   }
   @media (min-width:1200px){
     font-size:160px;
@@ -140,12 +140,12 @@ export const NameBox = styled.div`
     bottom:0;
     left:0;
     height:1px;
-    width:${props => props.nameFieldTop<props.height-100 ? '100%' : 0};
+    width:${props => props.nameFieldTop<=props.height-100 ? '100%' : 0};
     transition:width .2s ease-in-out;
     background-color:${COLORS.ACCENT};
   }
   >input{
-    opacity:${props => props.nameFieldTop<props.height-100 ? 1 : 0};
+    opacity:${props => props.nameFieldTop<=props.height-100 ? 1 : 0};
   }
   @media(min-width:992px) {
     .notEmpty-label, 
@@ -154,28 +154,28 @@ export const NameBox = styled.div`
     }
     >span{
       height:2px;
-      width:${props => props.nameFieldTop<props.height-300 ? '100%' : 0};
+      width:${props => props.nameFieldTop<=props.height-300 ? '100%' : 0};
     }
     >input{
-      width:${props => props.nameFieldTop<props.height-300 ? 1 : 0};
+      width:${props => props.nameFieldTop<=props.height-300 ? 1 : 0};
     }
   }
 `
 
 export const EmailBox = styled(NameBox)`
   >span{
-    width:${props => props.emailFieldTop<props.height-100 ? '100%' : 0};
+    width:${props => props.emailFieldTop<=props.height-100 ? '100%' : 0};
   }
   >input{
-    width:${props => props.emailFieldTop<props.height-100 ? 1 : 0};
+    width:${props => props.emailFieldTop<=props.height-100 ? 1 : 0};
   }
   @media(min-width:992px) {
     >span{
-      width:${props => props.nameFieldTop<props.height-300 ? '100%' : 0};
+      width:${props => props.nameFieldTop<=props.height-300 ? '100%' : 0};
       transition-delay: .2s;
     }
     >input{
-      width:${props => props.nameFieldTop<props.height-300 ? 1 : 0};
+      width:${props => props.nameFieldTop<=props.height-300 ? 1 : 0};
     }
   }
 `
@@ -198,12 +198,12 @@ export const MessageBox = styled.div`
     bottom:0;
     left:0;
     height:1px;
-    width:${props => props.messageFieldTop<props.height-200 ? '100%' : 0};
+    width:${props => props.messageFieldTop<=props.height-200 ? '100%' : 0};
     transition:width .2s ease-in-out;
     background-color:${COLORS.ACCENT};
   }
   >textarea{
-    opacity:${props => props.messageFieldTop<props.height-200 ? 1 : 0};
+    opacity:${props => props.messageFieldTop<=props.height-200 ? 1 : 0};
   }
   @media(min-width:768px) {
     height:180px;
@@ -218,12 +218,12 @@ export const MessageBox = styled.div`
       top:0;
       bottom:auto;
       width:2px;
-      height:${props => props.messageFieldTop<props.height-300 ? '100%' : 0};
+      height:${props => props.messageFieldTop<=props.height-300 ? '100%' : 0};
       transition:height .2s ease-in-out;
       transition-delay: .4s;
     }
     >textarea{
-      opacity:${props => props.messageFieldTop<props.height-300 ? 1 : 0};
+      opacity:${props => props.messageFieldTop<=props.height-300 ? 1 : 0};
     }
   }
   @media(min-width:1400px) {
@@ -239,9 +239,9 @@ export const NameLabel = styled.label`
   z-index:1;
   transition: all .2s;
   >span{
-    opacity:${props => props.nameFieldTop<props.height-100 ? 1 : 0};
+    opacity:${props => props.nameFieldTop<=props.height-100 ? 1 : 0};
     transition: opacity .16s ease-out;
-    transition-delay: ${props => props.nameFieldTop<props.height-100 ? '.16s' : '0s'}
+    transition-delay: ${props => props.nameFieldTop<=props.height-100 ? '.16s' : '0s'}
   }
   @media(min-width: 768px) {
     font-size:26px;
@@ -250,37 +250,37 @@ export const NameLabel = styled.label`
   }
   @media(min-width:992px) {
     >span{
-      opacity:${props => props.nameFieldTop<props.height-300 ? 1 : 0};
-      transition-delay: ${props => props.nameFieldTop<props.height-300 ? '.6s' : '0s'}
+      opacity:${props => props.nameFieldTop<=props.height-300 ? 1 : 0};
+      transition-delay: ${props => props.nameFieldTop<=props.height-300 ? '.6s' : '0s'}
     }
   }
 `
 
 export const EmailLabel = styled(NameLabel)`
   >span{
-    opacity:${props => props.emailFieldTop<props.height-100 ? 1 : 0};
+    opacity:${props => props.emailFieldTop<=props.height-100 ? 1 : 0};
     transition: opacity .16s ease-out;
-    transition-delay: ${props => props.emailFieldTop<props.height-100 ? '.16s' : '0s'}
+    transition-delay: ${props => props.emailFieldTop<=props.height-100 ? '.16s' : '0s'}
   }
   @media(min-width:992px) {
     >span{
-      opacity:${props => props.nameFieldTop<props.height-300 ? 1 : 0};
-      transition-delay: ${props => props.nameFieldTop<props.height-300 ? '.6s' : '0s'}
+      opacity:${props => props.nameFieldTop<=props.height-300 ? 1 : 0};
+      transition-delay: ${props => props.nameFieldTop<=props.height-300 ? '.6s' : '0s'}
     }
   }
 `
 
 export const MessageLabel = styled(NameLabel)`
   >span{
-    opacity:${props => props.messageFieldTop<props.height-200 ? 1 : 0};
+    opacity:${props => props.messageFieldTop<=props.height-200 ? 1 : 0};
     transition: opacity .16s ease-out;
-    transition-delay: ${props => props.messageFieldTop<props.height-200 ? '.16s' : '0s'}
+    transition-delay: ${props => props.messageFieldTop<=props.height-200 ? '.16s' : '0s'}
   }
   @media (min-width: 992px) {
     padding: 0 0 0 12px;
     >span{
-      opacity:${props => props.messageFieldTop<props.height-300 ? 1 : 0};
-      transition-delay: ${props => props.messageFieldTop<props.height-300 ? '.6s' : '0s'}
+      opacity:${props => props.messageFieldTop<=props.height-300 ? 1 : 0};
+      transition-delay: ${props => props.messageFieldTop<=props.height-300 ? '.6s' : '0s'}
     }
   }
 `
@@ -329,13 +329,13 @@ export const Message = styled.textarea`
 `
 
 export const SubmitBtnWrapper = styled.div`
-  opacity:${props => props.messageFieldTop<props.height-200 ? 1 : 0};
-  transform:${props => props.messageFieldTop<props.height-300 ? 'translateY(0)' : 'translateY(50px)'};
+  opacity:${props => props.messageFieldTop<=props.height-200 ? 1 : 0};
+  transform:${props => props.messageFieldTop<=props.height-300 ? 'translateY(0)' : 'translateY(50px)'};
   transition: opacity .16s ease-out, transform .2s ease-out;
-  transition-delay: ${props => props.messageFieldTop<props.height-200 ? '.16s' : '0s'};
+  transition-delay: ${props => props.messageFieldTop<=props.height-200 ? '.16s' : '0s'};
   @media (min-width:992px) {
-    opacity:${props => props.messageFieldTop<props.height-300 ? 1 : 0};
-    transition-delay: ${props => props.messageFieldTop<props.height-300 ? '.8s' : '0s'};
+    opacity:${props => props.messageFieldTop<=props.height-300 ? 1 : 0};
+    transition-delay: ${props => props.messageFieldTop<=props.height-300 ? '.8s' : '0s'};
   }
 `
 
