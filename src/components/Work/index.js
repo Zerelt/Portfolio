@@ -3,6 +3,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import AppTpe from 'assets/images/Red-TPE-App 128S 700H.png'
 import WebTpe from 'assets/images/Red-TPE-Web 128S 700H.png'
+import BrainArmada from 'assets/images/Red-Brain Armada 128s 700H preview.png'
 
 import {
   WorkContainer,
@@ -40,12 +41,12 @@ const projects = [
   },
   {
     "title": "Brain Armada",
-    "description": "Anim eiusmod duis magna anim irure occaecat ex consectetur sit ullamco consequat ad ut ullamco.",
-    "image": AppTpe,
-    "live": "https://thebrainarmada.com",
+    "description": "MVP for an app that facilitates the usage of Amazon's Mechanical Turk to organize almost any type of text, audio and video data and more",
+    "image": BrainArmada,
+    "live": " ",
     "secondaryDescription": {
       "mainTools": "React, styled components, React Router, REST API Calls, Git",
-      "otherTools": "Slack, Google cloud platform, Illustrator"
+      "otherTools": "Slack, Firebase, Illustrator"
     }
   }
 ]
@@ -82,8 +83,8 @@ const Work = ({ workRef, defaultTheme, projectOneTop, projectTwoTop, projectThre
                 </span>
               </ProjectDescriptionSecondary>
               <ProjectLiveWrapper className={`projectLive-${id}`}>
-                <ProjectLive href={project.live} target="_blank" rel="noopener noreferrer">
-                  See Live
+                <ProjectLive href={id===2 ? null : project.live} target="_blank" rel="noopener noreferrer">
+                  {id===2 ? 'Coming Soon' : 'See live'}
                 </ProjectLive>
               </ProjectLiveWrapper>
             </ProjectInfoContainer>
