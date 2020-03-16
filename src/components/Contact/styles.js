@@ -33,7 +33,7 @@ export const ContactContainer = styled.section`
     width:850px;
     justify-content:center;
     padding:0;
-    margin:15% 0 5% 0;
+    margin:120px 0 0 0;
   }
   @media(min-width:1200px){
     width:950px;

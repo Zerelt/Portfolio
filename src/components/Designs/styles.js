@@ -28,7 +28,10 @@ export const DesignsContainer = styled.section`
   }
   @media(min-width:992px) {
     width:850px;
-    margin:15% 0;
+    margin:120px 0 300px 0;
+  }
+  @media(any-hover:hover) and (min-width:992px) {
+    margin:0;
   }
   @media(min-width:1200px) {
     width:950px;

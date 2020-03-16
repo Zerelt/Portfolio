@@ -70,27 +70,28 @@ function underlineKeywords(wordCountStart,wordCountEnd) {
 
 
 export const AboutContainer = styled.section`
-  min-height:100vh;
+  height:100vh;
   width:260px;
   box-sizing:content-box;
   display:flex;
   align-items:center;
   justify-content: center;
   flex-direction: column;
-  padding:16px;
   padding:0px;
   @media (min-width:768px){
     width:500px;
-    margin:0 auto;
   }
   @media (min-width:992px){
     width: 850px;
+    min-height:800px;
+    margin:120px 0;
   }
   @media(min-width:1200px) {
     width:950px;
   }
   @media(min-width:1600px) {
     width:1300px;
+    min-height:1000px;
   }
 `
 

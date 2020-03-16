@@ -67,7 +67,7 @@ export const WorkContainer = styled.section`
   }
   @media(min-width:992px){
     padding:0;
-    margin:4% 0 15% 0;
+    margin:120px 0;
   }
 `
 
@@ -88,7 +88,8 @@ export const Project = styled.div`
   }
   @media (min-width:992px) {
     width:850px;
-    height:100vh;
+    height:90vh;
+    min-height:700px;
     flex-direction:row-reverse;
     justify-content:space-between;
     align-items:center;
@@ -101,6 +102,7 @@ export const Project = styled.div`
   }
   @media(min-width:1600px) {
     width:1300px;
+    min-height:1000px;
   }
 `
 
