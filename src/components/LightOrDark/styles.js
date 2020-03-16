@@ -25,6 +25,12 @@ export const LightOrDarkContainer = styled.div`
     left:40px;
     margin:auto;
   }
+  @media(min-width:1600px) {
+    left:80px;
+  }
+  @media(min-width:2000px) {
+    left: calc(50vw - 880px);
+  }
 `
 
 export const LightOrDarkOption = styled.p`
