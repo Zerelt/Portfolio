@@ -4,7 +4,7 @@ My new portfolio website, designed and built by myself with Illustrator, modern 
 
 ## Installation
 
-Simply download the .zip or clone the repository and run `yarn`.
+Simply download the .zip or clone the repository run `yarn` to install the packages then run `yarn start` to start webpack-dev-server then open your web browser and go to localhost://8080 to view it locally.
 
 ## License
 
