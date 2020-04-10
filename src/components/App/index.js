@@ -15,7 +15,10 @@ import {
   Main
 } from './styles'
 
-
+/* eslint-disable */
+// import resume file so it can be viewed on the web
+import Resume from 'assets/AlexDobre-Resume.pdf' 
+/* eslint-enable */
 
 class App extends Component {
   constructor(props) {
