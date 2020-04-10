@@ -5,14 +5,14 @@ const path = require('path');
 
 module.exports = {
   entry: {
-    app:[
+    app: [
       'webpack-dev-server/client?http://localhost:8080',
       'webpack/hot/only-dev-server',
       './src/index.js']
   },
   output: {
     path: path.resolve(__dirname,'dist'),
-    publicPath:'/',
+    publicPath: '/',
     filename: '[name].bundle.js',
   },
   // https://www.npmjs.com/package/babel-plugin-root-import does not work with other file besides js/jsx
@@ -26,20 +26,20 @@ module.exports = {
     }
   },
 
-  devtool:'inline-source-map',
+  devtool: 'inline-source-map',
 
 
   module: {
     rules: [
       {
-        test:/\.js$/,
-        exclude:/node_modules/,
-        use:['babel-loader', "eslint-loader"]
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: ['babel-loader', "eslint-loader"]
       },
       {
-        test:/\.(jpe?g|png|svg|gif)$/i,
-        exclude:/node_modules/,
-        use:[
+        test: /\.(jpe?g|png|svg|gif)$/i,
+        exclude: /node_modules/,
+        use: [
           'file-loader?name=[name].[ext]',
           'image-webpack-loader'
         ]
@@ -47,24 +47,28 @@ module.exports = {
       {
         test: /\.(ttf|woff|eot)$/,
         use: 'file-loader?name=fonts/[name].[ext]'
+      },
+      {
+        test: /\.pdf$/,
+        use: 'file-loader?name=Other/[name].[ext]'
       }
     ]
   },
 
-  devServer:{
-    contentBase:path.join(__dirname,'dist'),
-    publicPath:'/',
-    compress:true,
-    inline:true,
+  devServer: {
+    contentBase: path.join(__dirname,'dist'),
+    publicPath: '/',
+    compress: true,
+    inline: true,
     hot: true,
-    open:true
+    open: true
   },
 
   plugins: [
     new HtmlWebpackPlugin({
-      title:'Alexander',
+      title: 'Alexander',
       minify: {
-        collapseWhitespace:true
+        collapseWhitespace: true
       },
       hash: true,
       template: './src/index.ejs',

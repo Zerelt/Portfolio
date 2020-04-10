@@ -5,7 +5,7 @@ const path = require('path');
 
 module.exports = {
   entry: {
-    app:'./src/index.js'
+    app: './src/index.js'
   },
 
   output: {
@@ -26,19 +26,19 @@ module.exports = {
     minimize: true,
     minimizer: [new TerserPlugin()],
   },
-  devtool:'cheap-source-map',
+  devtool: 'cheap-source-map',
 
   module: {
     rules: [
       {
-        test:/\.js$/,
-        exclude:/node_modules/,
-        use:['babel-loader']
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: ['babel-loader']
       },
       {
-        test:/\.(jpe?g|png|svg|gif)$/i,
-        exclude:/node_modules/,
-        use:[
+        test: /\.(jpe?g|png|svg|gif)$/i,
+        exclude: /node_modules/,
+        use: [
           'file-loader?name=images/[name].[ext]&publicPath=./',
           'image-webpack-loader'
         ]
@@ -46,15 +46,19 @@ module.exports = {
       {
         test: /\.(ttf|woff|eot)$/,
         use: 'file-loader?name=fonts/[name].[ext]&publicPath=./'
+      },
+      {
+        test: /\.pdf$/,
+        use: 'file-loader?name=Other/[name].[ext]&publicPath=./'
       }
     ]
   },
 
   plugins: [
     new HtmlWebpackPlugin({
-      title:'Alexander',
+      title: 'Alexander',
       minify: {
-        collapseWhitespace:true
+        collapseWhitespace: true
       },
       hash: true,
       template: './src/index.ejs',
