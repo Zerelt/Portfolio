@@ -61,13 +61,11 @@ export const WorkContainer = styled.section`
   justify-content: center;
   flex-direction: column;
   padding:48px 0 0 0;
-  margin:180px 0;
   @media(min-width:768px){
     padding:96px 0 0 0;
   }
   @media(min-width:992px){
     padding:0;
-    margin:120px 0;
   }
 `
 

@@ -17,7 +17,8 @@ import {
 
 /* eslint-disable */
 // import resume file so it can be viewed on the web
-import Resume from 'assets/AlexDobre-Resume.pdf' 
+// this is viewed as a separate page on the /Pdfs url
+import AlexDobreResume from 'assets/AlexDobre-Resume.pdf' 
 /* eslint-enable */
 
 class App extends Component {
@@ -36,7 +37,8 @@ class App extends Component {
       projectThreeTop: null,
 
       designTextTop: null,
-      designCarouselTop: null,
+      designProjectOneTop: null,
+      designProjectTwoTop: null,
 
       contactHeadlineTop: null,
       nameFieldTop: null,
@@ -121,7 +123,8 @@ class App extends Component {
     const projectThreeTop = this.workSection.children[2].getBoundingClientRect().top
 
     const designTextTop = this.designsSection.children[0].getBoundingClientRect().top
-    const designCarouselTop = this.designsSection.children[1].getBoundingClientRect().top
+    const designProjectOneTop = this.designsSection.children[1].children[0].getBoundingClientRect().top
+    const designProjectTwoTop = this.designsSection.children[1].children[1].getBoundingClientRect().top
 
     const contactHeadlineTop = this.contactSection.children[0].getBoundingClientRect().top
     const nameFieldTop = this.contactSection.children[1].children[1].children[0].children[0].getBoundingClientRect().top
@@ -134,7 +137,8 @@ class App extends Component {
       projectTwoTop,
       projectThreeTop,
       designTextTop,
-      designCarouselTop,
+      designProjectOneTop,
+      designProjectTwoTop,
       contactHeadlineTop,
       nameFieldTop,
       emailFieldTop,
@@ -200,7 +204,7 @@ class App extends Component {
       infoOneTop, height, width,
       defaultTheme, currentPage, 
       projectOneTop, projectTwoTop, projectThreeTop,
-      designTextTop,designCarouselTop,
+      designTextTop,designProjectOneTop,designProjectTwoTop,
       contactHeadlineTop, nameFieldTop, emailFieldTop, messageFieldTop
     } = this.state
       return (
@@ -246,7 +250,8 @@ class App extends Component {
               height={height}
               defaultTheme={defaultTheme} 
               designTextTop={designTextTop}
-              designCarouselTop={designCarouselTop}
+              designProjectOneTop={designProjectOneTop}
+              designProjectTwoTop={designProjectTwoTop}
             />
             <Contact 
               defaultTheme={defaultTheme}
