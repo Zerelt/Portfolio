@@ -50,7 +50,7 @@ module.exports = {
       },
       {
         test: /\.pdf$/,
-        use: 'file-loader?name=Other/[name].[ext]'
+        use: 'file-loader?name=Pdfs/[name].[ext]'
       }
     ]
   },

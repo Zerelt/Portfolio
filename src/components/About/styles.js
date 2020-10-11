@@ -100,12 +100,12 @@ export const AboutInfo = styled.div`
   line-height:22px;
   color: ${props => props.defaultTheme ? COLORS.WHITE : COLORS.DARKBLACK} ;
   ${props=>{
-    if (props.infoOneTop<=props.height/2) {
+    if (props.infoOneTop<=props.height*.75) {
       return revealWords(0,40)
     }
   }};
   ${props=>{
-    if (props.infoOneTop<=props.height/2) {
+    if (props.infoOneTop<=props.height*.75) {
       return underlineKeywords(0,15)
     }
   }};

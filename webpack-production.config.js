@@ -49,7 +49,7 @@ module.exports = {
       },
       {
         test: /\.pdf$/,
-        use: 'file-loader?name=Other/[name].[ext]&publicPath=./'
+        use: 'file-loader?name=Pdfs/[name].[ext]&publicPath=./'
       }
     ]
   },
