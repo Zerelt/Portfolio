@@ -43,7 +43,7 @@ const projects = [
     "title": "Brain Armada",
     "description": "MVP for an app that facilitates the usage of Amazon's Mechanical Turk to organize almost any type of text, audio and video data and more",
     "image": BrainArmada,
-    "live": " ",
+    "live": "",
     "secondaryDescription": {
       "mainTools": "React, styled components, React Router, REST API Calls, Git",
       "otherTools": "Slack, Firebase, Illustrator"
@@ -60,6 +60,7 @@ const Work = ({ workRef, defaultTheme, projectOneTop, projectTwoTop, projectThre
     <WorkContainer ref={workRef}>
       {projects.map((project, id)=>{
         const projectVisible=topDistancesArray[id]<=height/2
+        const linkProps = project.live === "" ? { as: "span" } : { href: project.live, target: "_blank", rel: "noopener noreferrer" }
         return(
           <Project key={id} projectVisible={projectVisible}>
             <ProjectImageContainer className={`imageContainer-${id}`}>
@@ -83,7 +84,7 @@ const Work = ({ workRef, defaultTheme, projectOneTop, projectTwoTop, projectThre
                 </span>
               </ProjectDescriptionSecondary>
               <ProjectLiveWrapper className={`projectLive-${id}`}>
-                <ProjectLive href={id===2 ? null : project.live} target="_blank" rel="noopener noreferrer">
+                <ProjectLive {...linkProps}>
                   {id===2 ? 'Coming Soon' : 'See live'}
                 </ProjectLive>
               </ProjectLiveWrapper>
