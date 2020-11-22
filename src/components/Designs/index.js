@@ -36,13 +36,15 @@ const designProjects = [
     "title": "Sony website",
     "description": "Reimagining the product page for Sony’s industry leading noise cancelling headphones - the Sony WH-1000XM4.",
     "image": SonyRedesignPreview,
-    "live": SonyRedesign
+    "live": SonyRedesign,
+    "alt": "Sony Redesign"
   },
   {
     "title": "Amur leopard",
     "description": "Full website design for a campaign to raise awareness about the most critically endangered big cat in the world.",
     "image": AmurLeopardPreview,
-    "live": AmurLeopard
+    "live": AmurLeopard,
+    "alt": "Amur Leopard website"
   }
 ]
 
@@ -83,7 +85,7 @@ const Designs = ({ designsRef, defaultTheme, height, designTextTop, designProjec
                 designProjectVisible={designProjectVisible}
                 key={`design-${id}`} defaultTheme={defaultTheme}>
                 <PreviewContainer>
-                  <Preview src={designProject.image} className={`preview-${id}`} />
+                  <Preview src={designProject.image} className={`preview-${id}`} alt={designProject.alt} />
                   <DecorationContainer className={`decoration-${id}`}>
                     <Decoration />
                   </DecorationContainer>

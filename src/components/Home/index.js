@@ -78,17 +78,17 @@ const Home = ({ homeRef, defaultTheme, handleNavClick })=> {
           <SocialBox defaultTheme={defaultTheme} pageLoaded={pageLoaded}>
             <Social 
               href='https://twitter.com/Dobre_Alexander'
-              target='_blank' rel="noopener noreferrer">
+              target='_blank' rel="noopener noreferrer" alt="Twitter link">
               <Twitter />
             </Social>
             <Social 
               href='https://www.linkedin.com/in/alexandru-dobre-492242143/'
-              target='_blank' rel="noopener noreferrer">
+              target='_blank' rel="noopener noreferrer" alt="Linkedin link">
               <LinkedIn />
             </Social>
             <Social 
               href='https://github.com/Zerelt'
-              target="_blank" rel="noopener noreferrer">
+              target="_blank" rel="noopener noreferrer" alt="Github link">
               <Github />
             </Social>
           </SocialBox>
@@ -110,17 +110,17 @@ const Home = ({ homeRef, defaultTheme, handleNavClick })=> {
       <SocialBox2 defaultTheme={defaultTheme} pageLoaded={pageLoaded}>
         <Social 
           href='https://twitter.com/Dobre_Alexander'
-          target='_blank' rel="noopener noreferrer">
+          target='_blank' rel="noopener noreferrer" alt="Twitter link">
           <Twitter />
         </Social>
         <Social 
           href='https://www.linkedin.com/in/alexandru-dobre-492242143/'
-          target='_blank' rel="noopener noreferrer">
+          target='_blank' rel="noopener noreferrer" alt="Linkedin link">
           <LinkedIn />
         </Social>
         <Social 
           href='https://github.com/Zerelt'
-          target="_blank" rel="noopener noreferrer">
+          target="_blank" rel="noopener noreferrer" alt="Github link">
           <Github />
         </Social>
       </SocialBox2>
