@@ -3,6 +3,8 @@ const COLORS = {
   ACCENT: '#FF5757',
   DARKBLACK: '#050505',
   WHITE: '#FEFBF6',
+  LIGHTGRAY: '#F6F3EE',
+  DARKGRAY: '#1A1A1A'
 }
 
 export default COLORS
