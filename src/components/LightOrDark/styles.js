@@ -11,13 +11,12 @@ export const LightOrDarkContainer = styled.div`
   left:16px;
   height:90px;
   width:12px;
-  font-family: 'Circular Medium';
+  font-family:inherit;
   @media(min-width:1200px) {
     display:flex;
     position:fixed;
     bottom:40px;
     left:40px;
-    font-family: 'Circular';
   }
   @media(min-width:1400px) {
     top:0;
@@ -34,7 +33,7 @@ export const LightOrDarkContainer = styled.div`
 `
 
 export const LightOrDarkOption = styled.p`
-  font-size:13px;
+  font-size:16px;
   font-family:inherit;
   writing-mode:vertical-rl;
   transform:rotate(180deg);

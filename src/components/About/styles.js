@@ -153,7 +153,7 @@ export const Keywords = styled.span`
   }
   @media(min-width:992px) {
     span{
-      height:4px;
+      height:2px;
     }
   }
 `

@@ -128,29 +128,27 @@ export const ProjectInfoContainer = styled.div`
 `
 
 export const ProjectTitle = styled.h3`
-  font-size:28px;
-  font-family: 'Circular Black';
-  letter-spacing: -1.5px;
+  font-size:42px;
+  font-family: playfair-display, serif;
+  font-weight:700;
   color:inherit;
-  line-height:30px;
+  line-height:45px;
   margin:0 0 11px 0;
-  text-decoration:underline;
   text-decoration-color: ${COLORS.ACCENT};
-  @media (min-width:650px) and (orientation: portrait) {
+  /* @media (min-width:650px) and (orientation: portrait) {
     font-size:42px;
-    line-height:48px;
-  }
+    line-height:45px;
+  } */
   @media(min-width:992px){
-    font-size:48px;
-    line-height:48px;
+    font-size:45px;
     margin:0 0 44px 0;
-    max-width:300px;
+    max-width:285px;
   }
-  @media(min-width:1600px){
+  /* @media(min-width:1600px){
     font-size:58px;
     line-height:58px;
     max-width:380px;
-  }
+  } */
 `
 
 export const ProjectDescription = styled.p`
@@ -158,10 +156,9 @@ export const ProjectDescription = styled.p`
   line-height:22px;
   color:inherit;
   @media (min-width:992px) {
-    width:260px;
+    width:285px;
   }
   @media(min-width:1600px){
-    width:320px;
     font-size:18px;
     line-height:24px;
   }
@@ -193,5 +190,6 @@ export const ProjectLive = styled.a`
   margin:0 auto;
   @media(min-width:992px) {
     margin:auto auto auto 0;
+    width:285px;
   }
 `

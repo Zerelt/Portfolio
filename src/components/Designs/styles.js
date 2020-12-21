@@ -346,8 +346,8 @@ export const DecorationContainer = styled.span`
 
 export const DesignProjectTitle = styled.h3`
   font-size:28px;
-  font-family: 'Circular Black';
-  letter-spacing: -1.5px;
+  font-family: playfair-display, serif;
+  font-weight:700;
   color:inherit;
   line-height:30px;
   margin:0 0 11px 0;
@@ -377,18 +377,21 @@ export const DesignProjectDescription = styled.p`
   }
   @media (min-width:992px) {
     width:465px;
+    font-size:18px;
+    line-height:24px;
   }
   @media(min-width:1600px) {
     margin:0 0 60px 0;
   }
-  @media(min-width:1600px){
-    font-size:18px;
-    line-height:24px;
-  }
+  /* @media(min-width:1600px){
+  } */
 `
 
 export const DesignProjectLive = styled.a`
   ${MainButton}
+  @media(min-width:992px) {
+    width:285px;
+  }
   @media(min-width:2000px) {
     font-size:24px;
   }

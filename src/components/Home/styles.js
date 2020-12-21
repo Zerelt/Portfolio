@@ -270,7 +270,6 @@ export const DecorationBoxMd = styled.div`
 
 export const Headline = styled.div`
   max-width:220px;
-  font-family: ${props=>props.defaultTheme ? 'Circular' : 'Circular Medium'};
   font-size: 36px;
   line-height: 42px;
   color: ${props=>props.defaultTheme ? COLORS.WHITE : COLORS.DARKBLACK};
@@ -278,8 +277,8 @@ export const Headline = styled.div`
   transform: ${props=>props.pageLoaded ? 'translateY(0)':'translateY(15px)'};
   transition:opacity .18s .28s, transform .18s .28s ease-in;
   h1{
-    font-family:inherit;
-    font-weight:inherit;
+    font-family:playfair-display, serif;
+    font-weight:700;
     font-size:inherit;
     line-height:inherit;
   }
@@ -300,7 +299,6 @@ export const Headline = styled.div`
     max-width:260px;
   }
   @media(min-width:768px) and (orientation:portrait) {
-    font-family: 'Circular Medium';
     font-size:50px;
     line-height:54px;
     margin:0 0 0 50px;
@@ -310,7 +308,6 @@ export const Headline = styled.div`
   @media(min-width: 992px){
     max-width:530px;
     margin:0;
-    font-family: 'Circular Black';
     font-size:48px;
     text-align: left;
     line-height: 63px;
@@ -335,14 +332,14 @@ export const ButtonBox = styled.div`
     flex-direction:row;
     justify-content:space-between;
     width:100%;
-    max-width:565px;
+    max-width:540px;
     opacity:${props=>props.pageLoaded ? 1 : 0};
     transform:${props => props.pageLoaded ? 'translateY(0)': 'translateY(20px)'};
     transition:opacity .18s 2.7s ease-out, transform .16s 2.7s ease-out;
   }
-  @media(min-width:1600px) {
+  /* @media(min-width:1600px) {
     max-width:600px;
-  }
+  } */
 `
 
 export const ButtonBox2 = styled.div`
@@ -373,9 +370,6 @@ export const ButtonBox2 = styled.div`
 
 export const MidButton = styled.button`
   ${MainButton};
-  height:46px !important;
-  font-family: 'Circular' !important;
-  font-size:20px !important;
   &:nth-child(2){
     background-color:${props => props.defaultTheme ? COLORS.WHITE : COLORS.DARKBLACK};
     color:${props => props.defaultTheme ? COLORS.DARKBLACK : COLORS.WHITE};
@@ -391,7 +385,6 @@ export const MidButton = styled.button`
 export const WorkButton = styled.button`
   ${MainButton}
   @media(min-width:992px) {
-    font-family: 'Circular Black';
     margin:120px 0 0 0;
   }
   @media(min-width: 1200px) {

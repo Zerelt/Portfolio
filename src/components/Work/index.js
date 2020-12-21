@@ -21,7 +21,7 @@ import {
 const projects = [
   {
     "title": "The Prospect Exchange",
-    "description": "Professional hockey game analysis app that allows players to gain exposure and coaches to find new talent",
+    "description": "Professional hockey game analysis web app that allows players to gain exposure and coaches to find new talent",
     "image": AppTpe,
     "live": "https://app.theprospectexchange.com",
     "secondaryDescription": {

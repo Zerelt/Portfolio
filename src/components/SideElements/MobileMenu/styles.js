@@ -71,7 +71,8 @@ export const MobileButton = styled.button`
   width:260px;
   height:46px;
   font-size:16px;
-  font-family: 'Circular Medium';
+  font-family:inherit;
+  font-weight:inherit;
   color:${props => props.defaultTheme ? COLORS.WHITE : COLORS.DARKBLACK};
   text-transform:capitalize;
   background-color:transparent;

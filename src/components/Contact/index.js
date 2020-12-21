@@ -70,7 +70,7 @@ class Contact extends Component {
         <ContactHeader 
           defaultTheme={defaultTheme} height={height}
           contactHeadlineTop={contactHeadlineTop}>
-          Say Hi<span>.</span>
+          Say hello<span>.</span>
         </ContactHeader>
         <ContactForm name='contact' netlify method='post'>
           <input type='hidden' name='form-name' value='contact' />

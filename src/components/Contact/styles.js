@@ -48,7 +48,8 @@ export const ContactHeader = styled.h2`
   width:260px;
   font-size:32px;
   font-size:42px;
-  font-family: 'Circular Black';
+  font-family: inherit;
+  font-weight: 500;
   color:${props => props.defaultTheme ? COLORS.WHITE : COLORS.DARKBLACK};
   text-align: left;
   opacity:${props => props.contactHeadlineTop<=props.height-100 ? 1 : 0};
@@ -72,10 +73,10 @@ export const ContactHeader = styled.h2`
     font-size:180px;
     line-height:188px;
   }
-  @media (min-width:1600px){
+  /* @media (min-width:1600px){
     font-size:224px;
     line-height:228px;
-  }
+  } */
 `
 
 export const ContactForm = styled.form`
@@ -234,7 +235,8 @@ export const MessageBox = styled.div`
 export const NameLabel = styled.label`
   position:absolute;
   left:0;
-  font-size: 16px;
+  font-family: inherit;
+  font-size: 18px;
   color:${props => props.defaultTheme ? COLORS.WHITE : COLORS.DARKBLACK};
   z-index:1;
   transition: all .2s;
@@ -244,9 +246,7 @@ export const NameLabel = styled.label`
     transition-delay: ${props => props.nameFieldTop<=props.height-100 ? '.16s' : '0s'}
   }
   @media(min-width: 768px) {
-    font-size:26px;
-    font-family: 'Circular Bold';
-    top: -3px;
+    font-weight: 500;
   }
   @media(min-width:992px) {
     >span{
@@ -290,7 +290,8 @@ export const UserInput = styled.input`
   position:relative;
   width:100%;
   font-size:16px;
-  font-family: 'Circular';
+  font-family:inherit;
+  font-weight:inherit;
   color:${props => props.defaultTheme ? COLORS.WHITE : COLORS.DARKBLACK};
   background-color:transparent;
   z-index:2;
@@ -309,7 +310,8 @@ export const Message = styled.textarea`
   height:120px;
   color:${props => props.defaultTheme ? COLORS.WHITE : COLORS.DARKBLACK};
   font-size:16px;
-  font-family: 'Circular';
+  font-family: inherit;
+  font-weight: inherit;
   resize: none;
   background-color:transparent;
   z-index:2;
@@ -342,6 +344,9 @@ export const SubmitBtnWrapper = styled.div`
 export const SubmitBtn = styled.button`
   ${MainButton}
   margin:0 auto;
+  @media(min-width:992px) {
+    width:285px;
+  }
 `
 
 
