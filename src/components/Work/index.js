@@ -2,14 +2,16 @@ import { hot } from 'react-hot-loader'
 import React from 'react'
 import PropTypes from 'prop-types'
 import AppTpe from 'assets/images/Red-TPE-App 128S 700H.png'
-import WebTpe from 'assets/images/Red-TPE-Web 128S 700H.png'
+import WebTpe from 'assets/images/Hockey player - 800H.png'
 import BrainArmada from 'assets/images/Red-Brain Armada 128s 700H preview.png'
+import { DecorationRotated } from 'assets/theme/decoration'
 
 import {
   WorkContainer,
   Project,
   ProjectImageContainer,
   ProjectImage,
+  DecorationContainer,
   ProjectInfoContainer,
   ProjectTitle,
   ProjectDescription,
@@ -21,7 +23,7 @@ import {
 const projects = [
   {
     "title": "The Prospect Exchange",
-    "description": "Professional hockey game analysis web app that allows players to gain exposure and coaches to find new talent",
+    "description": "Professional hockey game analysis web app that allows players to gain exposure and coaches to find talent",
     "image": AppTpe,
     "live": "https://app.theprospectexchange.com",
     "secondaryDescription": {
@@ -35,7 +37,7 @@ const projects = [
     "image": WebTpe,
     "live": "https://www.theprospectexchange.com",
     "secondaryDescription": {
-      "mainTools": "React, styled components, React Router, Git",
+      "mainTools": "Javascript, React, styled components, React Router, Git",
       "otherTools": "Slack, Clubhouse, Zeplin, Sendgrid, Drift, Google cloud platform, Illustrator, Photoshop"
     }
   },
@@ -63,8 +65,12 @@ const Work = ({ workRef, defaultTheme, projectOneTop, projectTwoTop, projectThre
         const linkProps = project.live === "" ? { as: "span" } : { href: project.live, target: "_blank", rel: "noopener noreferrer" }
         return(
           <Project key={id} projectVisible={projectVisible}>
-            <ProjectImageContainer className={`imageContainer-${id}`}>
+            <ProjectImageContainer defaultTheme={defaultTheme} className={`imageContainer-${id}`}>
               <ProjectImage src={project.image} alt='Project image' />
+              <DecorationContainer>
+                <DecorationRotated className={`decoration-${id}`} />
+                <DecorationRotated className={`decoration-${id}`} />
+              </DecorationContainer>
             </ProjectImageContainer>
             <ProjectInfoContainer defaultTheme={defaultTheme}>
               <ProjectTitle className={`projectTitle-${id}`}>{project.title}</ProjectTitle>

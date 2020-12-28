@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import COLORS from 'assets/theme/colors'
 import { MainButton } from 'assets/theme/button'
+import { fullCenter } from 'assets/theme/mixins'
 
 
 // TODO: 
@@ -71,28 +72,44 @@ export const WorkContainer = styled.section`
 
 export const Project = styled.div`
   width:260px;
-  min-height:600px;
-  margin:0 0 350px 0;
+  margin:0 0 150px 0;
   display:flex;
   flex-direction:column;
-  justify-content:space-between;
+  justify-content:flex-start;
   align-items:flex-start;
+  // hide third project placeholder
   &:nth-child(3){
-    margin:0;
+    display:none !important;
   }
   ${props => {return revealProjects(props.projectVisible)}}
-  @media(min-width:768px) {
-    width:500px;
-  }
-  @media (min-width:992px) {
-    width:850px;
-    height:90vh;
-    min-height:700px;
+  @media (min-width:768px) {
+    width:600px;
     flex-direction:row-reverse;
     justify-content:space-between;
     align-items:center;
-    &:nth-child(2){
-      flex-direction:row;
+    // the ProjectImageContainer in the first project
+    &:nth-child(1) > div:nth-child(1) {
+      align-items:center;
+    }
+    // the ProjectImageContainer in the second project
+    &:nth-child(2) > div:nth-child(1) {
+      padding:0 5px;
+      img{
+        // image overflows but if you apply overflow:none 
+        // to the image container, the overflow of the 
+        // decorations are hidden as well
+        border-radius:0 0 12px 0;
+      }
+    }
+  }
+  @media(min-width:992px) {
+    width:850px;
+    &:nth-child(2) > div:nth-child(1) {
+      img{
+        // remove border radius since we add overflow to 
+        // the image container at 992 and remove the decorations
+        border-radius:0;
+      }
     }
   }
   @media(min-width:1200px) {
@@ -100,26 +117,109 @@ export const Project = styled.div`
   }
   @media(min-width:1600px) {
     width:1300px;
-    min-height:1000px;
-  }
+    // the image in the first project
+    &:nth-child(1) > div:nth-child(1) > img {
+      height:700px;
+    }
+    // the image in the second project
+    &:nth-child(2) > div:nth-child(1) > img {
+      height:740px;
+    }
+  } 
 `
 
 export const ProjectImageContainer = styled.div`
-  margin:0 0 32px 0;
-  @media(min-width:768px) and (orientation:landscape){
+  ${fullCenter}
+  align-items:flex-end;
+  height:296px;
+  width:260px;
+  margin:0 0 24px 0;
+  padding:6px 0 0 0;
+  border-radius:5px;
+  background-color:${props => props.defaultTheme ? COLORS.DARKGRAY : COLORS.LIGHTGRAY};
+  @media(min-width:768px) {
+    position:relative;
+    height:640px;
+    width:calc(100% - 256px);
+    padding:0;
     margin:0;
+    border-radius:16px;
+  }
+  @media(min-width:992px) {
+    height:600px;
+    // add !important flag to overwrite the padding we set
+    // in the Project component using nth-child > div:nth-child
+    padding:0px 30px !important;
+    width:calc(100% - 315px);
+    border-radius:16px;
+    overflow:hidden;
+  }
+  @media(min-width:1200px) {
+    padding:0 80px !important;
+  }
+  @media(min-width:1600px){
+    height:760px;
+    width:calc(100% - 345px);
+    padding:0 !important;
+  }
+`
+
+export const DecorationContainer = styled.div`
+  height:100%;
+  width:100%;
+  position:absolute;
+  top:0;
+  left:0;
+  svg{
+    display:none;
+  }
+  @media(min-width:768px) {
+    svg{
+      display:block;
+      position:absolute;
+      width:142px;
+      height:220px;
+      z-index:-1;
+    }
+    .decoration-0 { 
+      &:nth-child(1){
+        top:-13px;
+        left:18px;
+      }
+    &:nth-child(2){
+        bottom:14px;
+        right:18px;
+      }
+    }
+    .decoration-1 { 
+      &:nth-child(1){
+        top:-11px;
+        right:18px;
+    }
+      &:nth-child(2){
+        display:none;
+      }
+    }
+  }
+  @media(min-width:992px) {
+    display:none;
   }
 `
 
 export const ProjectImage = styled.img`
-  width: 100%;
+  height:100%;
+  width:auto;
+  @media (min-width:768px) {
+    height:auto;
+    width:100%;
+  }
   @media (min-width:992px) {
-    width:auto;
-    height:550px;
+    height:auto;
+    width:100%;
   }
   @media (min-width:1600px) {
     width:auto;
-    height:700px;
+    height:100%;
   }
 `
 
@@ -133,28 +233,34 @@ export const ProjectTitle = styled.h3`
   font-weight:700;
   color:inherit;
   line-height:45px;
-  margin:0 0 11px 0;
+  margin:0 0 14px 0;
   text-decoration-color: ${COLORS.ACCENT};
-  /* @media (min-width:650px) and (orientation: portrait) {
-    font-size:42px;
-    line-height:45px;
-  } */
-  @media(min-width:992px){
-    font-size:45px;
-    margin:0 0 44px 0;
-    max-width:285px;
+  @media(min-width:768px){
+    max-width:240px;
+    font-size:38px;
+    line-height:41px;
+    margin:0 0 24px 0;
   }
-  /* @media(min-width:1600px){
-    font-size:58px;
-    line-height:58px;
-    max-width:380px;
-  } */
+  @media(min-width:992px){
+    max-width:285px;
+    font-size:45px;
+    line-height:45px;
+  }
+  @media(min-width:1200px){
+    margin:0 0 44px 0;
+  }
+  @media(min-width:1600px){
+    margin:0 0 58px 0;
+  }
 `
 
 export const ProjectDescription = styled.p`
-  font-size:16px;
-  line-height:22px;
+  font-size:18px;
+  line-height:24px;
   color:inherit;
+  @media (min-width:768px) {
+    width:240px;
+  }
   @media (min-width:992px) {
     width:285px;
   }
@@ -167,19 +273,17 @@ export const ProjectDescription = styled.p`
 export const ProjectDescriptionSecondary = styled(ProjectDescription)`
   height:0;
   overflow:hidden;
-  margin:0 0 32px 0;
+  margin:0 0 38px 0;
   span{
     display:block;
   }
-  @media (min-width:650px) and (orientation: portrait) {
-    margin:0 0 80px 0;
-  }
-  @media(min-width:992px) {
+  @media(min-width:768px) {
     height:auto;
     overflow: visible;
+    margin:0 0 24px 0;
   }
   @media(min-width:1600px) {
-    margin:0 0 100px 0;
+    margin:0 0 80px 0;
   }
 `
 
@@ -188,6 +292,9 @@ export const ProjectLiveWrapper = styled.div``
 export const ProjectLive = styled.a`
   ${MainButton}
   margin:0 auto;
+  @media(min-width:768px) {
+    width:240px;
+  }
   @media(min-width:992px) {
     margin:auto auto auto 0;
     width:285px;
