@@ -14,7 +14,7 @@ function revealWords(wordCountStart,wordCountEnd) {
       styles +=`
       .words-revealed-${i} {
          opacity:1;
-          transition:opacity .2s ${i*.035}s ease-in;
+          transition:opacity .2s ${i*.03}s ease-in;
         }
       `
     }
@@ -27,7 +27,7 @@ function revealWords(wordCountStart,wordCountEnd) {
       styles+=`
       .words-revealed-${i} {
           opacity:1;
-          transition:opacity .2s ${i*.035}s ease-in;
+          transition:opacity .2s ${i*.03}s ease-in;
         }
       `
     }
@@ -79,11 +79,11 @@ export const AboutContainer = styled.section`
   flex-direction: column;
   padding:0px;
   @media (min-width:768px){
-    width:500px;
+    width:600px;
+    min-height:600px;
   }
   @media (min-width:992px){
     width: 850px;
-    min-height:800px;
     margin:120px 0;
   }
   @media(min-width:1200px) {
@@ -91,37 +91,36 @@ export const AboutContainer = styled.section`
   }
   @media(min-width:1600px) {
     width:1300px;
-    min-height:1000px;
   }
 `
 
 export const AboutInfo = styled.div`
-  font-size:16px;
-  line-height:22px;
+  font-size:18px;
+  line-height:24px;
   color: ${props => props.defaultTheme ? COLORS.WHITE : COLORS.DARKBLACK} ;
   ${props=>{
     if (props.infoOneTop<=props.height*.75) {
-      return revealWords(0,40)
+      return revealWords(0,62)
     }
   }};
   ${props=>{
     if (props.infoOneTop<=props.height*.75) {
-      return underlineKeywords(0,15)
+      return underlineKeywords(0,17)
     }
-  }};
+  }}; 
   &:nth-child(2){
     padding:75px 0 0 0;
   }
   @media (min-width:768px){
     font-size:32px;
-    line-height:38px;
+    line-height:48px;
     &:nth-child(2){
       padding:100px 0 0 0;
     }
   }
   @media (min-width:992px){
-    font-size:38px;
-    line-height:44px;
+    font-size:35px;
+    line-height:49px;
   }
   @media (min-width:1600px){
     font-size:48px; 
@@ -139,7 +138,7 @@ export const Keywords = styled.span`
   z-index: 1;
   >span{
     position:absolute;
-    bottom:-2px;
+    bottom:0;
     left:0;
     width:0;
     height:1px;
@@ -148,7 +147,7 @@ export const Keywords = styled.span`
   }
   @media(min-width:768px) {
     span{
-      height:3px;
+      bottom:2px;
     }
   }
   @media(min-width:992px) {
