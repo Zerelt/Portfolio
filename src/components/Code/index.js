@@ -53,13 +53,13 @@ const projects = [
   }
 ]
 
-const Work = ({ workRef, defaultTheme, projectOneTop, projectTwoTop, projectThreeTop, height }) => {
+const Code = ({ codeRef, defaultTheme, projectOneTop, projectTwoTop, projectThreeTop, height }) => {
 
 
   const topDistancesArray = [projectOneTop, projectTwoTop, projectThreeTop]
 
   return (
-    <WorkContainer ref={workRef}>
+    <WorkContainer ref={codeRef}>
       {projects.map((project, id)=>{
         const projectVisible=topDistancesArray[id]<=height/2
         const linkProps = project.live === "" ? { as: "span" } : { href: project.live, target: "_blank", rel: "noopener noreferrer" }
@@ -102,8 +102,8 @@ const Work = ({ workRef, defaultTheme, projectOneTop, projectTwoTop, projectThre
   )
 }
 
-Work.propTypes = {
-  workRef: PropTypes.func,
+Code.propTypes = {
+  codeRef: PropTypes.func,
   defaultTheme: PropTypes.bool,
   projectOneTop: PropTypes.number,
   projectTwoTop: PropTypes.number,
@@ -111,4 +111,4 @@ Work.propTypes = {
   height: PropTypes.number
 }
 
-export default hot(module)(Work)
+export default hot(module)(Code)

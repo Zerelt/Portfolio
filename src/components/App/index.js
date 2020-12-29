@@ -5,7 +5,7 @@ import SideElements from 'components/SideElements';
 import Home from 'components/Home';
 import About from 'components/About';
 import Designs from 'components/Designs';
-import Work from 'components/Work';
+import Code from 'components/Code';
 import Contact from 'components/Contact';
 import LightOrDark from 'components/LightOrDark'
 
@@ -118,9 +118,9 @@ class App extends Component {
   handleScroll = () => {
     const infoOneTopValue = this.infoOne.getBoundingClientRect().top
 
-    const projectOneTop = this.workSection.children[0].getBoundingClientRect().top
-    const projectTwoTop = this.workSection.children[1].getBoundingClientRect().top
-    const projectThreeTop = this.workSection.children[2].getBoundingClientRect().top
+    const projectOneTop = this.codeSection.children[0].getBoundingClientRect().top
+    const projectTwoTop = this.codeSection.children[1].getBoundingClientRect().top
+    const projectThreeTop = this.codeSection.children[2].getBoundingClientRect().top
 
     const designTextTop = this.designsSection.children[0].getBoundingClientRect().top
     const designProjectOneTop = this.designsSection.children[1].children[0].getBoundingClientRect().top
@@ -153,7 +153,7 @@ class App extends Component {
     const lastBreakpoint = width>=992 ? 300 : 100
     const home = this.homeSection.getBoundingClientRect().top
     const infoOneTopValue = this.infoOne.getBoundingClientRect().top
-    const projectOneTop = this.workSection.children[0].getBoundingClientRect().top
+    const projectOneTop = this.codeSection.children[0].getBoundingClientRect().top
     const designTextTop = this.designsSection.children[0].getBoundingClientRect().top
     const contactHeadlineTop = this.contactSection.children[0].getBoundingClientRect().top
 
@@ -169,7 +169,7 @@ class App extends Component {
     } 
     if (projectOneTop<=(height/2) && designTextTop>height/2) {
       this.setState({
-        currentPage: 'work'
+        currentPage: 'code'
       })
     } 
     if (designTextTop<=(height/2) && contactHeadlineTop>height - lastBreakpoint) {
@@ -188,12 +188,12 @@ class App extends Component {
   handleNavClick=(x) => {
     const home = this.homeSection
     const about = this.aboutSection
-    const work = this.workSection
+    const code = this.codeSection
     const designs = this.designsSection
     const contact = this.contactSection
     if (x==='home') {home.scrollIntoView({ block: 'start', behavior: 'smooth' });}
     if (x==='about') {about.scrollIntoView({ block: 'start', behavior: 'smooth' });}
-    if (x==='work') {work.scrollIntoView({ block: 'start', behavior: 'smooth' });}
+    if (x==='code') {code.scrollIntoView({ block: 'start', behavior: 'smooth' });}
     if (x==='designs') {designs.scrollIntoView({ block: 'start', behavior: 'smooth' });}
     if (x==='contact') {contact.scrollIntoView({ block: 'start', behavior: 'smooth' });}
   }
@@ -237,8 +237,8 @@ class App extends Component {
               aboutRef={el => {this.aboutSection = el}}
               setInfoOneRef={this.setInfoRef} 
             />
-            <Work 
-              workRef={el => {this.workSection = el}}
+            <Code 
+              codeRef={el => {this.codeSection = el}}
               height={height}
               projectOneTop={projectOneTop}
               projectTwoTop={projectTwoTop}

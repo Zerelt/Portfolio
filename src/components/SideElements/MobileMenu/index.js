@@ -50,10 +50,10 @@ const MobileMenu = ({ defaultTheme, currentPage, menuOpen, handleMenu, handleNav
         </MobileButton>
         <MobileButton 
           defaultTheme={defaultTheme}
-          currentPage={currentPage==='work'}
+          currentPage={currentPage==='code'}
           menuOpen={menuOpen}
-          onClick={()=>handleButtonClick('work')}>
-          work
+          onClick={()=>handleButtonClick('code')}>
+          code
         </MobileButton>
         <MobileButton 
           defaultTheme={defaultTheme}

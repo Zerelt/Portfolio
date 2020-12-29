@@ -13,7 +13,7 @@ import {
   DecorationBoxMd,
   Headline,
   ButtonBox,
-  WorkButton,
+  CodeButton,
   DesignsButton,
   ButtonDot,
   LogoContainer,
@@ -63,11 +63,11 @@ const Home = ({ homeRef, defaultTheme, handleNavClick })=> {
           </Headline>
 
           <ButtonBox pageLoaded={pageLoaded}>
-            <WorkButton onClick={()=>handleNavClick('work')}>
-              work
+            <CodeButton onClick={()=>handleNavClick('code')}>
+              code
               <ButtonDot />
               <ButtonDot />
-            </WorkButton>
+            </CodeButton>
             <DesignsButton defaultTheme={defaultTheme} onClick={()=>handleNavClick('designs')}>
               designs
               <ButtonDot designDot defaultTheme={defaultTheme} />
@@ -96,8 +96,8 @@ const Home = ({ homeRef, defaultTheme, handleNavClick })=> {
       </HomeContainerInner>
 
       <ButtonBox2 defaultTheme={defaultTheme} pageLoaded={pageLoaded}>
-        <MidButton onClick={()=>handleNavClick('work')}>
-          work
+        <MidButton onClick={()=>handleNavClick('code')}>
+          code
           <ButtonDot />
           <ButtonDot />
         </MidButton>

@@ -19,10 +19,10 @@ const SideBar = ({ defaultTheme, currentPage, handleNavClick })=> {
         <span>about</span>
       </Line>
       <Line 
-        onClick={()=>handleNavClick('work')}
+        onClick={()=>handleNavClick('code')}
         defaultTheme={defaultTheme} 
-        pageVisible={currentPage==='work'}>
-        <span>work</span>
+        pageVisible={currentPage==='code'}>
+        <span>code</span>
       </Line>
       <Line 
         onClick={()=>handleNavClick('designs')}

@@ -382,7 +382,7 @@ export const MidButton = styled.button`
   }
 `
 
-export const WorkButton = styled.button`
+export const CodeButton = styled.button`
   ${MainButton}
   @media(min-width:992px) {
     margin:120px 0 0 0;
@@ -400,7 +400,7 @@ export const WorkButton = styled.button`
   }
 `
 
-export const DesignsButton = styled(WorkButton)`
+export const DesignsButton = styled(CodeButton)`
   margin:20px 0 0 0;
   background-color: ${props=>props.defaultTheme ? COLORS.WHITE : COLORS.DARKBLACK};
   color: ${props=>props.defaultTheme ? COLORS.DARKBLACK : COLORS.WHITE};
