@@ -76,7 +76,7 @@ class Contact extends Component {
           <input type='hidden' name='form-name' value='contact' />
           <InputContainer>
             <NameAndEmail>
-              <NameBox nameFieldTop={nameFieldTop} height={height}>
+              <NameBox defaultTheme={defaultTheme} nameFieldTop={nameFieldTop} height={height}>
                 <span />
                 <UserInput 
                   defaultTheme={defaultTheme} 
@@ -96,7 +96,7 @@ class Contact extends Component {
                 </NameLabel>
               </NameBox>
 
-              <EmailBox nameFieldTop={nameFieldTop} emailFieldTop={emailFieldTop} height={height}>
+              <EmailBox defaultTheme={defaultTheme} nameFieldTop={nameFieldTop} emailFieldTop={emailFieldTop} height={height}>
                 <span />
                 <UserInput 
                   defaultTheme={defaultTheme} 
@@ -117,7 +117,7 @@ class Contact extends Component {
               </EmailBox>
             </NameAndEmail>
 
-            <MessageBox messageFieldTop={messageFieldTop} height={height}>
+            <MessageBox defaultTheme={defaultTheme} messageFieldTop={messageFieldTop} height={height}>
               <span />
               <Message 
                 defaultTheme={defaultTheme}
