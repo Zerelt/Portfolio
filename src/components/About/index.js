@@ -1,16 +1,34 @@
 import { hot } from 'react-hot-loader'
-import React from 'react'
+import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 
 import {
   AboutContainer,
   AboutInfo,
   Words,
-  Keywords
+  Keywords,
+  TechListOverlay,
+  TechListInner,
+  TechListCategory,
+  TechListTitle,
+  TechList,
+  CloseButtonWrapper,
+  CloseButton
 } from './styles'
+
+const techListData = [
+  { "title": "Code",
+    "data": "Javascript, CSS3, SASS, HTML5, GIT, React, Redux, React Router, Styled Components, Cypress, Jest,  Vue, jQuery, NodeJs, MongoDB, Webpack, Material UI, Bootstrap" },
+  { "title": "Design",
+    "data": "Adobe XD, Adobe Illustrator, Adobe Photoshop, Figma" },
+  { "title": "Project management",
+    "data": "Clubhouse, Slack" }
+]
 
 const About = React.forwardRef((props,ref) => {
   const { aboutRef, defaultTheme, infoOneTop, height, setInfoOneRef } = props
+
+  const [showTechList, setShowTechList] = useState(false)
 
   return (
     <AboutContainer ref={aboutRef}>
@@ -146,18 +164,40 @@ const About = React.forwardRef((props,ref) => {
         <Words className='words-revealed-55'>can </Words>
         <Words className='words-revealed-56'>use, </Words>
         <Words className='words-revealed-57'>please </Words>
-        <Words className='words-revealed-58'>
+        <Words className='words-revealed-58' onClick={()=>setShowTechList(true)}>
           <Keywords className='keywords'>
             click <span className='keywords-underlined-16' />
           </Keywords>
         </Words>
-        <Words className='words-revealed-59'>
+        <Words className='words-revealed-59' onClick={()=>setShowTechList(true)}>
           <Keywords className='keywords'>
             here<span className='keywords-underlined-17' />
           </Keywords>
         </Words>
         <Words className='words-revealed-60'>.</Words>
       </AboutInfo>
+
+      <TechListOverlay defaultTheme={defaultTheme} showTechList={showTechList}>
+        <TechListInner as='div'>
+          {techListData.map((category,id)=>{
+            return(
+              <TechListCategory key={`techCategory_${id}`} showTechList={showTechList}>
+                <TechListTitle defaultTheme={defaultTheme}>
+                  {category.title}:
+                </TechListTitle>
+                <TechList defaultTheme={defaultTheme}>
+                  {category.data}.
+                </TechList>
+              </TechListCategory>
+            )
+          })}
+          <CloseButtonWrapper showTechList={showTechList}>
+            <CloseButton onClick={()=>setShowTechList(false)}>
+              Close
+            </CloseButton>
+          </CloseButtonWrapper>
+        </TechListInner>
+      </TechListOverlay>
     </AboutContainer>
   )
 })

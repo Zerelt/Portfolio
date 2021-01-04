@@ -1,11 +1,7 @@
 import styled from 'styled-components'
 import COLORS from 'assets/theme/colors';
-
-
-// TODO: 
-// -give some love to phone landscape viewports
-
-
+import { fullCenter } from 'assets/theme/mixins'
+import { MainButton } from 'assets/theme/button'
 
 function revealWords(wordCountStart,wordCountEnd) {
   let styles = '';
@@ -68,14 +64,23 @@ function underlineKeywords(wordCountStart,wordCountEnd) {
 }
 
 
+function revealTechList () {
+  let styles='';
+  for(let i=1;i<=3;i++){
+    styles+=`
+      &:nth-child( ${i} ) {
+        transition-delay: ${i * .25}s;
+      }
+    `
+  } 
+  return styles
+}
 
 export const AboutContainer = styled.section`
   height:100vh;
   width:260px;
   box-sizing:content-box;
-  display:flex;
-  align-items:center;
-  justify-content: center;
+  ${fullCenter}
   flex-direction: column;
   padding:0px;
   @media (min-width:768px){
@@ -154,5 +159,124 @@ export const Keywords = styled.span`
     span{
       height:2px;
     }
+  }
+`
+
+export const TechListOverlay = styled.div`
+  ${fullCenter};
+  flex-direction:column;
+  position:fixed;
+  width:100%;
+  height:100%;
+  top:0;
+  left:0;
+  overflow:scroll;
+  z-index:${props => props.showTechList ? 2 : "-5"};
+  opacity:${props => props.showTechList ? 1 : 0};
+  &:after{
+    content:'';
+    width:100%;
+    height:100%;
+    position:absolute;
+    top:0;
+    left:0;
+    background-color:${props => props.defaultTheme ? COLORS.DARKBLACK: COLORS.WHITE};
+  }
+`
+
+export const TechListInner = styled(AboutContainer)`
+  margin:0 !important;
+  height:auto !important; 
+  z-index:3;
+  @media(min-width:1200px) {
+    min-height:auto;
+    flex-wrap:wrap;
+    flex-direction:row;
+    align-items:flex-start;
+    justify-content:space-between;
+  }
+`
+
+export const TechListCategory = styled.div`
+  width:100%;
+  transform: ${props => props.showTechList ? 'translateZ(0)' : 'translate3d(0, 50px, 0)'};
+  opacity: ${props => props.showTechList ? 1 : 0};
+  transition: transform ease, opacity ease;
+  transition-duration: ${props => props.showTechList ? '0.5s' : '0s'};
+  ${props=>{
+    if (props.showTechList) {
+      return revealTechList()
+    }
+  }};
+  &:nth-child(2){
+    padding:12px 0;
+    margin:12px 0;
+    border-top:1px solid ${COLORS.ACCENT};
+    border-bottom:1px solid ${COLORS.ACCENT};
+  }
+  @media(min-width:768px) {
+    &:nth-child(2) {
+      padding:24px 0;
+      margin:24px 0;
+    }
+  }
+  @media(min-width:1200px) {
+    &:nth-child(1){
+      border-bottom:1px solid ${COLORS.ACCENT};
+      padding:0 0 24px 0;
+    }
+    &:nth-child(2), &:nth-child(3){
+      width:50%;
+    }
+    &:nth-child(2) {
+      border-top:none;
+      border-bottom:none;
+      margin:0;
+      padding:24px 0 0 0;
+    }
+    &:nth-child(3) {
+      justify-self:flex-start;
+      padding:24px 0 0 0;
+    }
+  }
+`
+
+export const TechList = styled.p`
+  font-size:18px;
+  line-height:24px;
+  color: ${props => props.defaultTheme ? COLORS.WHITE : COLORS.DARKBLACK} ;
+  @media (min-width:768px){
+    font-size:32px;
+    line-height:48px;
+  }
+  @media (min-width:992px){
+    font-size:35px;
+    line-height:49px;
+  }
+  @media (min-width:1600px){
+    font-size:48px; 
+    line-height:64px;
+  }
+`
+
+export const TechListTitle = styled(TechList)`
+  font-weight:500;
+`
+
+export const CloseButtonWrapper = styled.div`
+  margin:48px auto 0 auto;
+  transform: ${props => props.showTechList ? 'translateZ(0)' : 'translate3d(0, 50px, 0)'};
+  opacity: ${props => props.showTechList ? 1 : 0};
+  transition: transform ease, opacity ease;
+  transition-duration: ${props => props.showTechList ? '0.5s' : '0s'};
+  transition-delay: ${props => props.showTechList ? '1s' : '0s'};
+  z-index:1;
+`
+
+export const CloseButton = styled.div`
+  ${MainButton}
+  margin:0 auto;
+  @media(min-width:992px) {
+    width:285px;
   }
 `

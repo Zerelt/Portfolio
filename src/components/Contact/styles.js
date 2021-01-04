@@ -126,7 +126,7 @@ export const NameBox = styled.div`
   }
   >input{
     opacity:${props => props.nameFieldTop<=props.height-148 ? 1 : 0};
-    transition:${props => props.nameFieldTop<=props.height-148 ? 'opacity .2s .2s ease-in-out' : 0};
+    transition:${props => props.nameFieldTop<=props.height-148 ? 'opacity .2s .2s ease-in-out' : 'opacity 0s'};
   }
   @media(min-width:992px) {
     margin:0;
@@ -150,7 +150,7 @@ export const EmailBox = styled(NameBox)`
   }
   >input{
     opacity:${props => props.emailFieldTop<=props.height-148 ? 1 : 0};
-    transition:${props => props.emailFieldTop<=props.height-148 ? 'opacity .2s .2s ease-in-out' : 0};
+    transition:${props => props.emailFieldTop<=props.height-148 ? 'opacity .2s .2s ease-in-out' : 'opacity 0s'};
   }
   @media(min-width:992px) {
     >span{
@@ -187,7 +187,7 @@ export const MessageBox = styled.div`
   }
   >textarea{
     opacity:${props => props.messageFieldTop<=props.height-148 ? 1 : 0};
-    transition:${props => props.messageFieldTop<=props.height-148 ? 'opacity .2s .2s ease-in-out' : 0};
+    transition:${props => props.messageFieldTop<=props.height-148 ? 'opacity .2s .2s ease-in-out' : 'opacity 0s'};
   }
   @media(min-width:768px) {
     width:100%;
