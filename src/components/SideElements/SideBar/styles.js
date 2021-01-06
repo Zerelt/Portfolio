@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import COLORS from 'assets/theme/colors'
 import { fullCenter } from 'assets/theme/mixins'
 
-export const SideElementsContainer = styled.div`
+export const SideBarContainer = styled.div`
   display:none;
   @media (min-width:1200px){
     ${fullCenter};

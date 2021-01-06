@@ -1,11 +1,11 @@
 import { hot } from 'react-hot-loader'
 import React from 'react'
 import PropTypes from 'prop-types'
-import { SideElementsContainer, SideBarElement, Line } from './styles'
+import { SideBarContainer, SideBarElement, Line } from './styles'
 
 const SideBar = ({ defaultTheme, currentPage, handleNavClick })=> {
   return (
-    <SideElementsContainer>
+    <SideBarContainer>
       <SideBarElement>
         <Line 
           onClick={()=>handleNavClick('home')}
@@ -38,7 +38,7 @@ const SideBar = ({ defaultTheme, currentPage, handleNavClick })=> {
           <span>contact</span>
         </Line>
       </SideBarElement>
-    </SideElementsContainer>
+    </SideBarContainer>
   )
 }
 
