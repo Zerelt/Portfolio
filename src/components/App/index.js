@@ -1,13 +1,15 @@
 import React, {Component} from 'react';
 import { Scrollbars } from 'react-custom-scrollbars-cbx';
 import smoothscroll from 'smoothscroll-polyfill';
-import SideElements from 'components/SideElements';
+import SideBar from 'components/SideElements/SideBar';
 import Home from 'components/Home';
 import About from 'components/About';
 import Designs from 'components/Designs';
 import Code from 'components/Code';
 import Contact from 'components/Contact';
 import LightOrDark from 'components/LightOrDark'
+import MobileMenu from 'components/SideElements/MobileMenu'
+import MenuButton from 'components/SideElements/MenuButton'
 
 import COLORS from 'assets/theme/colors';
 import {
@@ -30,6 +32,8 @@ class App extends Component {
 
       height: window.innerHeight,
       width: window.innerWidth,
+
+      menuOpen: false,
 
       infoOneTop: null,
       projectOneTop: null,
@@ -106,6 +110,10 @@ class App extends Component {
         document.body.style.backgroundColor=bgColor
       })
     }
+  }
+
+  handleMenu =(x) => {
+    this.setState({ menuOpen: x })
   }
   
   handleResize = () => {
@@ -202,7 +210,7 @@ class App extends Component {
     
     const {
       infoOneTop, height, width,
-      defaultTheme, currentPage, 
+      defaultTheme, currentPage, menuOpen,
       projectOneTop, projectTwoTop, projectThreeTop,
       designTextTop,designProjectOneTop,designProjectTwoTop,
       contactHeadlineTop, nameFieldTop, emailFieldTop, messageFieldTop
@@ -213,13 +221,24 @@ class App extends Component {
           onScroll={this.handleScroll}
           renderThumbVertical={props => <div {...props} className="thumb-vertical" />}
           renderTrackVertical={props => <div {...props} className="track-vertical" />}>
-          <Main defaultTheme={defaultTheme}>
-            <SideElements 
+          <Main defaultTheme={defaultTheme} menuOpen={menuOpen}>
+            <SideBar 
               defaultTheme={defaultTheme}
               currentPage={currentPage} 
-              width={width}
-              handleTheme={this.handleTheme}
               handleNavClick={this.handleNavClick} 
+            />
+            <MenuButton 
+              menuOpen={menuOpen}
+              handleMenu={this.handleMenu} 
+            />
+            <MobileMenu 
+              defaultTheme={defaultTheme}
+              currentPage={currentPage} 
+              menuOpen={menuOpen} 
+              handleMenu={this.handleMenu} 
+              width={width}
+              handleNavClick={this.handleNavClick} 
+              handleTheme={this.handleTheme}
             />
             <LightOrDark 
               defaultTheme={defaultTheme}

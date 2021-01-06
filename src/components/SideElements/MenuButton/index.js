@@ -2,19 +2,19 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { MenuButtonContainer, MenuButtonLine } from './styles'
 
-const MenuButton = ({ defaultTheme, handleMenu })=> {
+const MenuButton = ({ menuOpen, handleMenu })=> {
 
   return(
-    <MenuButtonContainer onClick={()=>{handleMenu(true)}}>
-      <MenuButtonLine defaultTheme={defaultTheme} />
+    <MenuButtonContainer menuOpen={menuOpen} onClick={()=>{handleMenu(!menuOpen)}}>
       <MenuButtonLine />
-      <MenuButtonLine defaultTheme={defaultTheme} />
+      <MenuButtonLine />
     </MenuButtonContainer>
   )
 }
 
 MenuButton.propTypes = {
   defaultTheme: PropTypes.bool,
+  menuOpen: PropTypes.bool,
   handleMenu: PropTypes.func
 }
 

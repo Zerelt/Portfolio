@@ -21,17 +21,11 @@ export const MainButton = `
   text-decoration:none;
   overflow: hidden;
   z-index:1;
-  @media (min-width:768px) {
-    
-  }
   @media(min-width:1200px){
     &:hover{
       box-shadow:0px 8px 88px rgba(255,87,87,0.53);
       transform:translateY(-3px);
       transition:box-shadow .14s, transform 0.18s;
     }
-  }
-  @media(min-width:2000px) {
-    
   }
 `

@@ -53,4 +53,7 @@ export const Main = styled.main`
   font-weight:300;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
+  >section{
+      filter: ${props => props.menuOpen ? 'blur(26px)' : 'none'};
+  }
 `

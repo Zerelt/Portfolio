@@ -171,7 +171,7 @@ export const TechListOverlay = styled.div`
   top:0;
   left:0;
   overflow:scroll;
-  z-index:${props => props.showTechList ? 2 : "-5"};
+  z-index:${props => props.showTechList ? 4 : "-5"};
   opacity:${props => props.showTechList ? 1 : 0};
   &:after{
     content:'';

@@ -2,15 +2,34 @@ import styled from 'styled-components'
 import COLORS from 'assets/theme/colors'
 import { fullCenter } from 'assets/theme/mixins'
 
-export const SideBarContainer = styled.div`
+export const SideElementsContainer = styled.div`
   display:none;
-  width:fit-content;
-  @media(min-width:1200px) {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-direction: column;
+  @media (min-width:1200px){
+    ${fullCenter};
+    height:100%;
+    position: fixed;
+    top:0;
+    bottom:0;
+    right:6.2vw;
+    margin:auto;
+    z-index: 2;
   }
+  @media (min-width:1200px){
+    right:8vw;
+  }
+  @media (min-width:1600px){
+    right:5vw;
+  }
+  @media(min-width:2000px) {
+    right:calc(50vw - 850px);
+  }
+`
+
+export const SideBarElement = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
 `
 
 export const Line = styled.span`
