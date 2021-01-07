@@ -248,6 +248,7 @@ class App extends Component {
               homeRef={el => {this.homeSection = el}}
               handleNavClick={this.handleNavClick}
               defaultTheme={defaultTheme} 
+              height={height}
             />
             <About 
               defaultTheme={defaultTheme}
