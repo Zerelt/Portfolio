@@ -1,34 +1,32 @@
 import { hot } from 'react-hot-loader'
 import React, { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
-import { LogoSm, LogoMd, LogoLg } from './Logos'
-import { Decoration } from 'assets/theme/decoration'
+import { LogoLg } from './Logo'
+import { Decoration, DecorationRotated } from 'assets/theme/decoration'
 import { Twitter, LinkedIn, Github } from 'assets/theme/social'
 
 import {
   HomeContainer,
   HomeContainerInner,
-  HeadlineAndButtons,
-  DecorationBox,
-  DecorationBoxMd,
-  Headline,
-  ButtonBox,
-  WorkButton,
-  DesignsButton,
-  ButtonDot,
   LogoContainer,
+  HeadlineAndButtons,
+  DecorationBoxHorizontal,
+  DecorationBoxVertical,
+  Headline,
+  ButtonBoxDesktop,
+  DesktopButton,
+  ButtonDot,
   SocialBox,
-  SocialBox2,
   Social,
+  ButtonBoxMobile,
+  MobileButton,
   TopLeftDecoration,
   TopRightDecoration,
   BottomRightDecoration,
-  BottomLeftDecoration,
-  ButtonBox2,
-  MidButton
+  BottomLeftDecoration
 } from './styles'
 
-const Home = ({ homeRef, defaultTheme, handleNavClick })=> {
+const Home = ({ homeRef, defaultTheme, handleNavClick, height })=> {
 
   const[pageLoaded, setPageLoaded] = useState(false)
   useEffect(()=>{ 
@@ -36,44 +34,40 @@ const Home = ({ homeRef, defaultTheme, handleNavClick })=> {
   },[])
 
   return (
-    <HomeContainer ref={homeRef}>
+    <HomeContainer ref={homeRef} height={height}>
       <HomeContainerInner defaultTheme={defaultTheme}>
 
         <LogoContainer defaultTheme={defaultTheme} pageLoaded={pageLoaded}>
-          <LogoMd />
           <LogoLg />
         </LogoContainer>
 
         <HeadlineAndButtons>
-          <DecorationBox pageLoaded={pageLoaded}>
+          <DecorationBoxHorizontal pageLoaded={pageLoaded}>
             <Decoration />
-          </DecorationBox>
-          <DecorationBoxMd pageLoaded={pageLoaded}>
-            <Decoration />
-          </DecorationBoxMd>
-          <DecorationBoxMd pageLoaded={pageLoaded} secondary>
-            <Decoration />
-          </DecorationBoxMd>
+          </DecorationBoxHorizontal>
+          <DecorationBoxVertical pageLoaded={pageLoaded}>
+            <DecorationRotated />
+          </DecorationBoxVertical>
+          <DecorationBoxVertical pageLoaded={pageLoaded} secondary>
+            <DecorationRotated />
+          </DecorationBoxVertical>
           
           <Headline defaultTheme={defaultTheme} pageLoaded={pageLoaded}>
-            <h1>Front-end engineer <span>and</span> UX designer</h1>
-            <LogoContainer defaultTheme={defaultTheme} pageLoaded={pageLoaded}>
-              <LogoSm />
-            </LogoContainer>
+            <h1>Front-end engineer <span>and</span> UX Designer</h1>
           </Headline>
 
-          <ButtonBox pageLoaded={pageLoaded}>
-            <WorkButton onClick={()=>handleNavClick('work')}>
-              work
+          <ButtonBoxDesktop pageLoaded={pageLoaded}>
+            <DesktopButton onClick={()=>handleNavClick('code')}>
+              code
               <ButtonDot />
               <ButtonDot />
-            </WorkButton>
-            <DesignsButton defaultTheme={defaultTheme} onClick={()=>handleNavClick('designs')}>
+            </DesktopButton>
+            <DesktopButton defaultTheme={defaultTheme} onClick={()=>handleNavClick('designs')}>
               designs
               <ButtonDot designDot defaultTheme={defaultTheme} />
               <ButtonDot designDot defaultTheme={defaultTheme} />
-            </DesignsButton>
-          </ButtonBox>
+            </DesktopButton>
+          </ButtonBoxDesktop>
 
           <SocialBox defaultTheme={defaultTheme} pageLoaded={pageLoaded}>
             <Social 
@@ -95,35 +89,18 @@ const Home = ({ homeRef, defaultTheme, handleNavClick })=> {
         </HeadlineAndButtons>
       </HomeContainerInner>
 
-      <ButtonBox2 defaultTheme={defaultTheme} pageLoaded={pageLoaded}>
-        <MidButton onClick={()=>handleNavClick('work')}>
-          work
+      <ButtonBoxMobile defaultTheme={defaultTheme} pageLoaded={pageLoaded}>
+        <MobileButton onClick={()=>handleNavClick('code')}>
+          code
           <ButtonDot />
           <ButtonDot />
-        </MidButton>
-        <MidButton defaultTheme={defaultTheme} onClick={()=>handleNavClick('designs')}>
+        </MobileButton>
+        <MobileButton defaultTheme={defaultTheme} onClick={()=>handleNavClick('designs')}>
           designs
           <ButtonDot designDot defaultTheme={defaultTheme} />
           <ButtonDot designDot defaultTheme={defaultTheme} />
-        </MidButton>
-      </ButtonBox2>
-      <SocialBox2 defaultTheme={defaultTheme} pageLoaded={pageLoaded}>
-        <Social 
-          href='https://twitter.com/Dobre_Alexander'
-          target='_blank' rel="noopener noreferrer" aria-label="Twitter Link">
-          <Twitter />
-        </Social>
-        <Social 
-          href='https://www.linkedin.com/in/alexandru-dobre-492242143/'
-          target='_blank' rel="noopener noreferrer" aria-label="LinkedIn Link">
-          <LinkedIn />
-        </Social>
-        <Social 
-          href='https://github.com/Zerelt'
-          target="_blank" rel="noopener noreferrer" aria-label="Github Link">
-          <Github />
-        </Social>
-      </SocialBox2>
+        </MobileButton>
+      </ButtonBoxMobile>
 
       <TopLeftDecoration 
         defaultTheme={defaultTheme} 
@@ -149,7 +126,8 @@ const Home = ({ homeRef, defaultTheme, handleNavClick })=> {
 Home.propTypes = {
   homeRef: PropTypes.func,
   defaultTheme: PropTypes.bool,
-  handleNavClick: PropTypes.func
+  handleNavClick: PropTypes.func,
+  height: PropTypes.number
 }
 
 export default hot(module)(Home)

@@ -79,7 +79,7 @@ const Designs = ({ designsRef, defaultTheme, height, designTextTop, designProjec
       <DesignProjects defaultTheme={defaultTheme}>
         {
           designProjects.map((designProject,id)=>{
-            const designProjectVisible = designProjectTopArray[id]<=height*0.7
+            const designProjectVisible = designProjectTopArray[id]<=height*.75
             return(
               <DesignProjectItem
                 designProjectVisible={designProjectVisible}

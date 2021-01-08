@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 export const Decoration = () => {
   return(
@@ -117,10 +118,11 @@ export const Decoration = () => {
 
 
 
-export const DecorationRotated = () => {
+export const DecorationRotated = ({ className }) => {
   return(
     <> {/* shorthand for React.Fragment */}
       <svg 
+        className={className}
         x="0px" y="0px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 142 222">
         <defs>
           <style>
@@ -232,3 +234,6 @@ export const DecorationRotated = () => {
   )
 }
 
+DecorationRotated.propTypes={
+  className: PropTypes.string
+}

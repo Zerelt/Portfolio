@@ -7,9 +7,9 @@ import {
   LightOrDarkOption
 } from './styles'
 
-const LightOrDark = ({ defaultTheme, handleTheme, mobile }) => {
+const LightOrDark = ({ defaultTheme, handleTheme }) => {
   return(
-    <LightOrDarkContainer mobile={mobile}>
+    <LightOrDarkContainer>
       <LightOrDarkOption defaultTheme={defaultTheme} onClick={()=>handleTheme(false)}>
         Light
         <span />
@@ -24,8 +24,7 @@ const LightOrDark = ({ defaultTheme, handleTheme, mobile }) => {
 
 LightOrDark.propTypes = {
   defaultTheme: PropTypes.bool,
-  handleTheme: PropTypes.func,
-  mobile: PropTypes.bool
+  handleTheme: PropTypes.func
 }
 
 export default hot(module)(LightOrDark)
