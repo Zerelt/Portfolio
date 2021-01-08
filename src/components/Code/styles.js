@@ -56,6 +56,7 @@ function revealProjects (projectVisible) {
 
 export const WorkContainer = styled.section`
   min-height:100vh;
+  width:260px;
   box-sizing:content-box;
   display:flex;
   align-items:center;
@@ -69,20 +70,26 @@ export const WorkContainer = styled.section`
   padding, which is invalid*/
   padding-top: ${props => `${(props.height - 580)/2}px`};
   @media(min-width:768px){
+    width:600px;
     padding-top: ${props => `${(props.height - 640)/2}px`};
   }
   @media(min-width:992px){
+    width:850px;
     padding:0;
     padding-top: ${props => `${(props.height - 600)/2}px`};
   }
+  @media(min-width:1200px){
+    width:950px;
+  }
   @media(min-width:1600px){
+    width:1300px;
     padding:0;
     padding-top: ${props => `${(props.height - 760)/2}px`};
   }
 `
 
 export const Project = styled.div`
-  width:260px;
+  width:100%;
   margin:0 0 150px 0;
   display:flex;
   flex-direction:column;
@@ -94,7 +101,6 @@ export const Project = styled.div`
   }
   ${props => {return revealProjects(props.projectVisible)}}
   @media (min-width:768px) {
-    width:600px;
     flex-direction:row-reverse;
     justify-content:space-between;
     align-items:center;
@@ -114,7 +120,6 @@ export const Project = styled.div`
     }
   }
   @media(min-width:992px) {
-    width:850px;
     &:nth-child(2) > div:nth-child(1) {
       img{
         // remove border radius since we add overflow to 
@@ -123,11 +128,7 @@ export const Project = styled.div`
       }
     }
   }
-  @media(min-width:1200px) {
-    width:950px;
-  }
   @media(min-width:1600px) {
-    width:1300px;
     // the image in the first project
     &:nth-child(1) > div:nth-child(1) > img {
       height:700px;
@@ -309,5 +310,102 @@ export const ProjectLive = styled.a`
   @media(min-width:992px) {
     margin:auto auto auto 0;
     width:285px;
+  }
+`
+
+export const Quote = styled.div`
+  width:100%;
+  display:flex;
+  flex-direction:column;
+  color: ${props => props.defaultTheme ? COLORS.WHITE : COLORS.DARKBLACK};
+  margin:48px 0 0 0;
+  @media(min-width:768px){
+    margin:96px 0 0 0;
+  }
+`
+
+export const QuoteText = styled.p`
+  position:relative;
+  font-family:playfair-display, serif;
+  font-size:18px;
+  line-height:26px;
+  color:inherit;
+  text-indent:60px;
+  opacity: ${props => props.quote<= props.height*.75 ? 1 : 0};
+  transform: ${props => props.quote<= props.height*.75 ? 'translateX(0)' : 'translateX(-50px)'};
+  transition: opacity .22s ease, transform .22s ease;
+  span{
+    display:block;
+    position:absolute;
+    font-size:100px;
+    line-height:60px;
+    text-indent:0;
+    &:nth-child(1){
+      top:0;
+      left:0;
+    }
+    &:nth-child(2){
+      bottom:0;
+      right:0;
+    }
+  }
+  @media (min-width:768px) {
+    font-size:30px;
+    line-height:40px;
+    span{
+      font-size:126px;
+      line-height:105px;
+    }
+  }
+  @media (min-width:992px) {
+    text-indent:92px;
+    font-size:36px;
+    line-height:48px;
+    span{
+      font-size:132px;
+      line-height:111px;
+    }
+  }
+  @media (min-width:1200px) {
+    span{
+      font-size:140px;
+      line-height:120px;
+    }
+  }
+  @media(min-width:1600px){
+    font-size:48px;
+    line-height:64px;
+    span{
+      font-size:180px;
+      line-height:145px;
+    }
+  }
+`
+
+export const QuoteAuthor = styled(QuoteText)`
+  width:152px;
+  font-size:16px;
+  line-height:24px;
+  align-self:flex-end;
+  text-align:right;
+  text-indent:40px;
+  margin:36px 0 0 0;
+  transform: ${props => props.quote<= props.height*.75 ? 'translateX(0)' : 'translateX(50px)'};
+  @media(min-width:768px) {
+    width:auto;
+    font-size:24px;
+    margin:26px 0 0 0;
+  }
+  @media(min-width:992px) {
+    font-size:26px;
+    margin:36px 0 0 0;
+  }
+  @media(min-width:1200px) {
+    font-size:30px;
+    margin:40px 0 0 0;
+  }
+  @media(min-width:1600px) {
+    font-size:42px;
+    margin:48px 0 0 0;
   }
 `

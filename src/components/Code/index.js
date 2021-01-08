@@ -17,7 +17,10 @@ import {
   ProjectDescription,
   ProjectDescriptionSecondary,
   ProjectLiveWrapper,
-  ProjectLive
+  ProjectLive,
+  Quote,
+  QuoteText,
+  QuoteAuthor
 } from './styles'
 
 const projects = [
@@ -53,7 +56,7 @@ const projects = [
   }
 ]
 
-const Code = ({ codeRef, defaultTheme, projectOneTop, projectTwoTop, projectThreeTop, height }) => {
+const Code = ({ codeRef, defaultTheme, projectOneTop, projectTwoTop, projectThreeTop, quote, height }) => {
 
 
   const topDistancesArray = [projectOneTop, projectTwoTop, projectThreeTop]
@@ -98,6 +101,16 @@ const Code = ({ codeRef, defaultTheme, projectOneTop, projectTwoTop, projectThre
           </Project>
         )
       })}
+      <Quote defaultTheme={defaultTheme}>
+        <QuoteText height={height} quote={quote}>
+          <span>&#8220;</span>I think his dedication, diligence, good eye for design, and solid code 
+          will be a great addition to any project, and I'm interested in seeing 
+          where he will go next!<span>&#8222;</span>
+        </QuoteText>
+        <QuoteAuthor height={height} quote={quote}>
+          Fabio Santos, Sr Software Engineer
+        </QuoteAuthor>
+      </Quote>
     </WorkContainer>
   )
 }
@@ -108,6 +121,7 @@ Code.propTypes = {
   projectOneTop: PropTypes.number,
   projectTwoTop: PropTypes.number,
   projectThreeTop: PropTypes.number,
+  quote: PropTypes.number,
   height: PropTypes.number
 }
 

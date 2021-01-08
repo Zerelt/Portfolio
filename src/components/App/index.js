@@ -39,6 +39,7 @@ class App extends Component {
       projectOneTop: null,
       projectTwoTop: null,
       projectThreeTop: null,
+      quote: null,
 
       designTextTop: null,
       designProjectOneTop: null,
@@ -129,6 +130,7 @@ class App extends Component {
     const projectOneTop = this.codeSection.children[0].getBoundingClientRect().top
     const projectTwoTop = this.codeSection.children[1].getBoundingClientRect().top
     const projectThreeTop = this.codeSection.children[2].getBoundingClientRect().top
+    const quote = this.codeSection.children[3].getBoundingClientRect().top
 
     const designTextTop = this.designsSection.children[0].children[0].getBoundingClientRect().top
     const designProjectOneTop = this.designsSection.children[1].children[0].getBoundingClientRect().top
@@ -144,6 +146,7 @@ class App extends Component {
       projectOneTop,
       projectTwoTop,
       projectThreeTop,
+      quote,
       designTextTop,
       designProjectOneTop,
       designProjectTwoTop,
@@ -210,7 +213,7 @@ class App extends Component {
     const {
       infoOneTop, height, width,
       defaultTheme, currentPage, menuOpen,
-      projectOneTop, projectTwoTop, projectThreeTop,
+      projectOneTop, projectTwoTop, projectThreeTop, quote,
       designTextTop,designProjectOneTop,designProjectTwoTop,
       contactHeadlineTop, nameFieldTop, emailFieldTop, messageFieldTop
     } = this.state
@@ -262,6 +265,7 @@ class App extends Component {
               projectOneTop={projectOneTop}
               projectTwoTop={projectTwoTop}
               projectThreeTop={projectThreeTop}
+              quote={quote}
               defaultTheme={defaultTheme} 
             />
             <Designs 

@@ -139,7 +139,6 @@ export const Words = styled.span`
 
 export const Keywords = styled.span`
   position:relative;
-  white-space: nowrap;
   z-index: 1;
   >span{
     position:absolute;
