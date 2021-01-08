@@ -296,7 +296,7 @@ export const DesktopButton = styled.button`
     }
     &:nth-child(2){
       &:hover{
-        box-shadow:${props => props.defaultTheme ? '0px 8px 88px rgba(254,251,246,0.25)' : '0px 8px 88px rgba(5,5,5,0.3)'};
+        box-shadow:${props => props.defaultTheme ? '0px 8px 88px rgba(254, 251, 246, .25)' : '0px 8px 88px rgba(5, 5, 5, .3)'};
       }
     }
   }

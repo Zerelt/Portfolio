@@ -130,7 +130,7 @@ class App extends Component {
     const projectTwoTop = this.codeSection.children[1].getBoundingClientRect().top
     const projectThreeTop = this.codeSection.children[2].getBoundingClientRect().top
 
-    const designTextTop = this.designsSection.children[0].getBoundingClientRect().top
+    const designTextTop = this.designsSection.children[0].children[0].getBoundingClientRect().top
     const designProjectOneTop = this.designsSection.children[1].children[0].getBoundingClientRect().top
     const designProjectTwoTop = this.designsSection.children[1].children[1].getBoundingClientRect().top
 
@@ -158,29 +158,28 @@ class App extends Component {
 
   handleSidebar = () =>{
     const { height,width } = this.state
-    const lastBreakpoint = width>=992 ? 300 : 100
-    const home = this.homeSection.getBoundingClientRect().top
+    const lastBreakpoint = width>=992 ? 200 : 148
     const infoOneTopValue = this.infoOne.getBoundingClientRect().top
     const projectOneTop = this.codeSection.children[0].getBoundingClientRect().top
-    const designTextTop = this.designsSection.children[0].getBoundingClientRect().top
+    const designTextTop = this.designsSection.children[0].children[0].getBoundingClientRect().top
     const contactHeadlineTop = this.contactSection.children[0].getBoundingClientRect().top
 
-    if(home<=height/2 && infoOneTopValue>height/2) {
+    if(infoOneTopValue>height*.75) {
       this.setState({
         currentPage: 'home'
       })
     }
-    if(infoOneTopValue<=(height/2) && projectOneTop>height/2 ) {
+    if(infoOneTopValue<=(height*.75) && projectOneTop>height*.75 ) {
       this.setState({
         currentPage: 'about'
       })
     } 
-    if (projectOneTop<=(height/2) && designTextTop>height/2) {
+    if (projectOneTop<=(height*.75) && designTextTop>height*.75) {
       this.setState({
         currentPage: 'code'
       })
     } 
-    if (designTextTop<=(height/2) && contactHeadlineTop>height - lastBreakpoint) {
+    if (designTextTop<=(height*.75) && contactHeadlineTop>height - lastBreakpoint) {
       this.setState({
         currentPage: 'designs'
       })

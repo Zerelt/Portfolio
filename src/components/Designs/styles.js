@@ -134,13 +134,13 @@ export const HeadlineSm = styled.p`
   font-size:16px;
   margin:0 0 100px 0;
   height:65px;
-  opacity:${props => props.designTextTop <= props.height/2 ? 1 : 0};
-  transform:${props => props.designTextTop <= props.height/2 ? 'translateX(0px)' : 'translateX(-50px)'};
+  opacity:${props => props.designTextTop <= props.height*.75 ? 1 : 0};
+  transform:${props => props.designTextTop <= props.height*.75 ? 'translateX(0px)' : 'translateX(-50px)'};
   transition:opacity .16s ease-in, transform .16s .08s ease-in;
   span{
     display:none;
     align-self:flex-start;
-    height:${props => props.designTextTop <= props.height/2 ? '65px' : '0px'};
+    height:${props => props.designTextTop <= props.height*.75 ? '65px' : '0px'};
     transition: height .16s .8s ease-in;
     width:1px;
     background-color:${COLORS.ACCENT};
@@ -178,14 +178,14 @@ export const HeadlineLgContainer = styled.div`
   flex-direction: column;
   align-items:flex-end;
   align-self:flex-end;
-  opacity:${props => props.designTextTop <= props.height/2 ? 1 : 0};
-  transform:${props => props.designTextTop <= props.height/2 ? 'translateX(0px)' : 'translateX(50px)'};
+  opacity:${props => props.designTextTop <= props.height*.75 ? 1 : 0};
+  transform:${props => props.designTextTop <= props.height*.75 ? 'translateX(0px)' : 'translateX(50px)'};
   transition:opacity .16s .32s ease-in, transform .16s .38s ease-in;
   >span{
     display:block;
     float:right;
     height:1px;
-    width:${props => props.designTextTop <= props.height/2 ? '95px' : '0px'};
+    width:${props => props.designTextTop <= props.height*.75 ? '95px' : '0px'};
     transition:width .16s .7s ease-in;
     margin:0 0 10px 0;
     background-color:${COLORS.ACCENT};
@@ -193,7 +193,7 @@ export const HeadlineLgContainer = styled.div`
   @media(min-width:768px){
     width:240px;
     span{
-      width:${props => props.designTextTop <= props.height/2 ? '135px' : '0px'};
+      width:${props => props.designTextTop <= props.height*.75 ? '135px' : '0px'};
     }
   }
   @media(min-width:992px){

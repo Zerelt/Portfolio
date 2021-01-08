@@ -89,7 +89,7 @@ export const AboutContainer = styled.section`
   }
   @media (min-width:992px){
     width: 850px;
-    margin:120px 0;
+    min-height:700px;
   }
   @media(min-width:1200px) {
     width:950px;
@@ -170,17 +170,12 @@ export const TechListOverlay = styled.div`
   height:100%;
   top:0;
   left:0;
-  overflow:scroll;
+  overflow-y:scroll;
   z-index:${props => props.showTechList ? 4 : "-5"};
   opacity:${props => props.showTechList ? 1 : 0};
-  &:after{
-    content:'';
-    width:100%;
-    height:100%;
-    position:absolute;
-    top:0;
-    left:0;
-    background-color:${props => props.defaultTheme ? COLORS.DARKBLACK: COLORS.WHITE};
+  background-color:${props => props.defaultTheme ? COLORS.DARKBLACK: COLORS.WHITE};
+  @media(min-width:1200px) {
+    overflow-y:auto;
   }
 `
 
@@ -202,7 +197,7 @@ export const TechListCategory = styled.div`
   transform: ${props => props.showTechList ? 'translateZ(0)' : 'translate3d(0, 50px, 0)'};
   opacity: ${props => props.showTechList ? 1 : 0};
   transition: transform ease, opacity ease;
-  transition-duration: ${props => props.showTechList ? '0.5s' : '0s'};
+  transition-duration: ${props => props.showTechList ? '.5s' : '0s'};
   ${props=>{
     if (props.showTechList) {
       return revealTechList()
@@ -268,7 +263,7 @@ export const CloseButtonWrapper = styled.div`
   transform: ${props => props.showTechList ? 'translateZ(0)' : 'translate3d(0, 50px, 0)'};
   opacity: ${props => props.showTechList ? 1 : 0};
   transition: transform ease, opacity ease;
-  transition-duration: ${props => props.showTechList ? '0.5s' : '0s'};
+  transition-duration: ${props => props.showTechList ? '.5s' : '0s'};
   transition-delay: ${props => props.showTechList ? '1s' : '0s'};
   z-index:1;
 `

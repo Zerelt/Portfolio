@@ -1,5 +1,5 @@
 import { hot } from 'react-hot-loader'
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 
 import {
@@ -29,6 +29,19 @@ const About = React.forwardRef((props,ref) => {
   const { aboutRef, defaultTheme, infoOneTop, height, setInfoOneRef } = props
 
   const [showTechList, setShowTechList] = useState(false)
+
+  const checkKeyPress = (event) => {
+    if(event.key==='Escape') {
+      setShowTechList(false)
+    }
+  }
+
+  useEffect(()=>{
+    window.addEventListener('keydown', checkKeyPress)
+    return () => {
+      window.removeEventListener('keydown', checkKeyPress)
+    }
+  },[])
 
   return (
     <AboutContainer ref={aboutRef}>

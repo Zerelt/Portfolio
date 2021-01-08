@@ -58,12 +58,12 @@ const MobileMenu = ({ defaultTheme, currentPage, menuOpen, handleMenu, handleNav
 
         <ThemeOptions 
           className='option-4'
-          defaultTheme={defaultTheme} onClick={()=>handleTheme(false)}>
+          defaultTheme={defaultTheme} onClick={()=>{handleTheme(false);handleMenu(false);}}>
           light
         </ThemeOptions>
         <ThemeOptions 
           className='option-5'
-          defaultTheme={defaultTheme} onClick={()=>handleTheme(true)}>
+          defaultTheme={defaultTheme} onClick={()=>{handleTheme(true);handleMenu(false);}}>
           dark
         </ThemeOptions>
 

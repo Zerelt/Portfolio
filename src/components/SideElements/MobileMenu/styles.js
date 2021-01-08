@@ -41,7 +41,7 @@ export const MobileMenuOverlay = styled.div`
   top:0;
   left:0;
   opacity:${props => props.menuOpen ? '.23' : 0};
-  transition:opacity 0.2s 0.2s ease;
+  transition:opacity .2s .2s ease;
   filter:${props => props.defaultTheme ? 'brightness(85%)' : 'brightness(100%)'};
   background-color:${props => props.defaultTheme ? COLORS.DARKBLACK : COLORS.LIGHTGRAY};
   z-index:1;
@@ -126,6 +126,6 @@ export const SeparationLine = styled.span`
   width:100%;
   height:1px;
   background-color:#707070;
-  opacity:0.42;
+  opacity:.42;
   margin:18px 0;
 `

@@ -59,9 +59,9 @@ const Code = ({ codeRef, defaultTheme, projectOneTop, projectTwoTop, projectThre
   const topDistancesArray = [projectOneTop, projectTwoTop, projectThreeTop]
 
   return (
-    <WorkContainer ref={codeRef}>
+    <WorkContainer ref={codeRef} height={height}>
       {projects.map((project, id)=>{
-        const projectVisible=topDistancesArray[id]<=height/2
+        const projectVisible=topDistancesArray[id]<=height*.75
         const linkProps = project.live === "" ? { as: "span" } : { href: project.live, target: "_blank", rel: "noopener noreferrer" }
         return(
           <Project key={id} projectVisible={projectVisible}>

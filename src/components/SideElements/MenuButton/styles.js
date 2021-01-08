@@ -12,7 +12,7 @@ export const MenuButtonContainer = styled.div`
   flex-direction: column;
   background-color:${COLORS.ACCENT};
   border-radius:50%;
-  box-shadow:0 4px 16px 8px rgba(255, 87, 87, 0.3);
+  box-shadow:0 4px 16px 8px rgba(255, 87, 87, .3);
   transform:${props => props.menuOpen ? 'rotate(-45deg)' : 'rotate(0)'};
   transition: transform .22s ease;
   z-index:3;

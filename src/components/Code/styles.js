@@ -61,12 +61,23 @@ export const WorkContainer = styled.section`
   align-items:center;
   justify-content: center;
   flex-direction: column;
-  padding:48px 0 0 0;
+  /* innerHeight minus the height of the Project divided by 2 to 
+  make it so that clicking on the navigation scrolls do the section,
+  always showing the first project centered on screen or, in the 
+  case where where the innerHeight is smaller than the Project hight,
+  scrolls to the top of the first project, since we'd get negative 
+  padding, which is invalid*/
+  padding-top: ${props => `${(props.height - 580)/2}px`};
   @media(min-width:768px){
-    padding:96px 0 0 0;
+    padding-top: ${props => `${(props.height - 640)/2}px`};
   }
   @media(min-width:992px){
     padding:0;
+    padding-top: ${props => `${(props.height - 600)/2}px`};
+  }
+  @media(min-width:1600px){
+    padding:0;
+    padding-top: ${props => `${(props.height - 760)/2}px`};
   }
 `
 
