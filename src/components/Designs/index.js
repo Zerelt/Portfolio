@@ -1,17 +1,9 @@
 import { hot } from 'react-hot-loader'
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Decoration, DecorationRotated } from 'assets/theme/decoration'
-import AmurLeopardPreview from 'assets/images/AmurLeopardPreview.jpg'
-import SonyRedesignPreview from 'assets/images/SonyRedesignPreview.jpg'
-
-/* eslint-disable */
-// import resume file so it can be viewed on the web
-// these are viewed as separate pages on the /Pdfs url. - Temporary 
-// solution until i decide on (or make) an image viewer
-import SonyRedesign from 'assets/DesignFiles/SonyRedesign-1080px.pdf'
-import AmurLeopard from 'assets/DesignFiles/AmurLeopard-1080px.pdf'
-/* eslint-enable */
+import OceanStars from 'assets/images/OceanStars.jpg'
+import SonyRedesign from 'assets/images/SonyRedesign.jpg'
+import AmurLeopard from 'assets/images/AmurLeopard.jpg'
 
 import {
   DesignsContainer,
@@ -23,34 +15,28 @@ import {
   DesignProjects,
   DesignProjectItem,
   PreviewContainer,
-  Preview,
-  DecorationContainer,
-  DesignProjectTitle,
-  DesignProjectDescription,
-  DesignProjectLive
+  Preview
 } from './styles'
 
 
 const designProjects = [
   {
-    "title": "Sony website",
-    "description": "Reimagining the product page for Sony’s industry leading noise cancelling headphones - the Sony WH-1000XM4.",
-    "image": SonyRedesignPreview,
-    "live": SonyRedesign,
-    "alt": "Sony Redesign"
+    "image": OceanStars,
+    "alt": "Luxury yacht membership concept"
   },
   {
-    "title": "Amur leopard",
-    "description": "Full website design for a campaign to raise awareness about the most critically endangered big cat in the world.",
-    "image": AmurLeopardPreview,
-    "live": AmurLeopard,
-    "alt": "Amur Leopard website"
+    "image": SonyRedesign,
+    "alt": "Sony Redesign design concept"
+  },
+  {
+    "image": AmurLeopard,
+    "alt": "Amur Leopard charity website concept"
   }
 ]
 
-const Designs = ({ designsRef, defaultTheme, height, designTextTop, designProjectOneTop, designProjectTwoTop }) => {
+const Designs = ({ designsRef, defaultTheme, height, designTextTop, designProjectOneTop, designProjectTwoTop, designProjectThreeTop }) => {
 
-  const designProjectTopArray = [designProjectOneTop, designProjectTwoTop]
+  const designProjectTopArray = [designProjectOneTop, designProjectTwoTop, designProjectThreeTop]
 
   return(
     <DesignsContainer ref={designsRef} defaultTheme={defaultTheme} height={height}>
@@ -81,32 +67,12 @@ const Designs = ({ designsRef, defaultTheme, height, designTextTop, designProjec
           designProjects.map((designProject,id)=>{
             const designProjectVisible = designProjectTopArray[id]<=height*.75
             return(
-              <DesignProjectItem
+              <DesignProjectItem 
                 designProjectVisible={designProjectVisible}
                 key={`design-${id}`} defaultTheme={defaultTheme}>
-                <PreviewContainer>
-                  <Preview src={designProject.image} className={`preview-${id}`} alt={designProject.alt} />
-                  <DecorationContainer className={`decoration-${id}`}>
-                    <Decoration />
-                  </DecorationContainer>
-                  <DecorationContainer className={`decorationRotated-${id}`}>
-                    <DecorationRotated />
-                  </DecorationContainer>
+                <PreviewContainer designProjectVisible={designProjectVisible}>
+                  <Preview src={designProject.image} alt={designProject.alt} />
                 </PreviewContainer>
-                <DesignProjectTitle 
-                  className={`designProjectTitle-${id}`}>
-                  {designProject.title}
-                </DesignProjectTitle>
-                <DesignProjectDescription 
-                  className={`designProjectDescription-${id}`}>
-                  {designProject.description}
-                </DesignProjectDescription>
-                <DesignProjectLive 
-                  className={`designProjectLive-${id}`}
-                  href={designProject.live} 
-                  target="_blank" rel="noopener noreferrer">
-                  See Full Design
-                </DesignProjectLive>
               </DesignProjectItem>
             )
           })
@@ -123,7 +89,8 @@ Designs.propTypes = {
   height: PropTypes.number,
   designTextTop: PropTypes.number,
   designProjectOneTop: PropTypes.number,
-  designProjectTwoTop: PropTypes.number
+  designProjectTwoTop: PropTypes.number,
+  designProjectThreeTop: PropTypes.number
 }
 
 export default hot(module)(Designs)

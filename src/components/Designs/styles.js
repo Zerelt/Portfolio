@@ -1,86 +1,7 @@
 import styled from 'styled-components'
 import COLORS from 'assets/theme/colors'
 import { fullCenter } from 'assets/theme/mixins'
-import { MainButton } from 'assets/theme/button'
 import WhiteCursor from 'assets/images/WhiteCursor.svg'
-
-// TODO: 
-// -give some love to phone landscape viewports
-
-function revealProjects (designProjectVisible) {
-  let styles =''
-  for(let i=0;i<=2;i++) {
-    styles+=`
-      .decoration-${i} {
-        opacity:${designProjectVisible ? 1 : 0};
-        transform:${designProjectVisible ? 'translateX(0)' : 'translateX(50px)'};
-        transition:opacity .18s .1s ease-in-out, transform .2s .14s ease-in-out;
-      }
-      .decorationRotated-${i} {
-        opacity:${designProjectVisible ? 1 : 0};
-        transform:${designProjectVisible ? 'translateX(0)' : 'translateX(-50px)'};
-        transition:opacity .14s .2s ease-in-out, transform .17s .22s ease-in-out;
-      }
-      .preview-${i} {
-        opacity:${designProjectVisible ? 1 : 0};
-        transform:${designProjectVisible ? 'translateY(0)' : 'translateY(50px)'};
-        transition:opacity .14s .26s ease-in-out, transform .17s .3s ease-in-out;
-      }
-      .designProjectTitle-${i} {
-        opacity:${designProjectVisible ? 1 : 0};
-        transform:${designProjectVisible ? 'translateY(0)' : 'translateY(50px)'};
-        transition:opacity .14s .34s ease-in-out, transform .17s .36s ease-in-out;
-      }
-      .designProjectDescription-${i} {
-        opacity:${designProjectVisible ? 1 : 0};
-        transform:${designProjectVisible ? 'translateY(0)' : 'translateY(50px)'};
-        transition:opacity .14s .38s ease-in-out, transform .17s .4s ease-in-out;
-      }
-      .designProjectLive-${i} {
-        opacity:${designProjectVisible ? 1 : 0};
-        transform:${designProjectVisible ? 'translateY(0)' : 'translateY(50px)'};
-        transition:opacity .14s .42s ease-in-out, transform .17s .44s ease-in-out;
-      }
-      `
-    /*
-      // Faster animation timings - don't use until/unless you decide to increase 
-      // the animation speed of the other sections' animation
-      styles+=`
-        .preview-${i} {
-          opacity:${designProjectVisible ? 1 : 0};
-          transform:${designProjectVisible ? 'translateY(0)' : 'translateY(50px)'};
-          transition:opacity .14s .2s ease-in-out, transform .17s .2s ease-in-out;
-        }
-        .designProjectTitle-${i} {
-          opacity:${designProjectVisible ? 1 : 0};
-          transform:${designProjectVisible ? 'translateY(0)' : 'translateY(50px)'};
-          transition:opacity .14s .20s ease-in-out, transform .17s .22s ease-in-out;
-        }
-        .designProjectDescription-${i} {
-          opacity:${designProjectVisible ? 1 : 0};
-          transform:${designProjectVisible ? 'translateY(0)' : 'translateY(50px)'};
-          transition:opacity .14s .24s ease-in-out, transform .17s .26s ease-in-out;
-        }
-        .designProjectLive-${i} {
-          opacity:${designProjectVisible ? 1 : 0};
-          transform:${designProjectVisible ? 'translateY(0)' : 'translateY(50px)'};
-          transition:opacity .14s .28s ease-in-out, transform .17s .3s ease-in-out;
-        }
-        .decoration-${i} {
-          opacity:${designProjectVisible ? 1 : 0};
-          transform:${designProjectVisible ? 'translateX(0)' : 'translateX(50px)'};
-          transition:opacity .18s .34s ease-in-out, transform .2s .36s ease-in-out;
-        }
-        .decorationRotated-${i} {
-          opacity:${designProjectVisible ? 1 : 0};
-          transform:${designProjectVisible ? 'translateX(0)' : 'translateX(-50px)'};
-          transition:opacity .18s .34s ease-in-out, transform .2s .36s ease-in-out;
-        }
-        `
-      */
-    }
-  return styles
-}
 
 export const DesignsContainer = styled.section`
   width:260px;
@@ -89,8 +10,10 @@ export const DesignsContainer = styled.section`
   justify-content:center;
   flex-direction:column;
   color: ${props => props.defaultTheme ? COLORS.WHITE : COLORS.DARKBLACK};
+  margin:20px 0 0 0; // so the "g" from text from the above section isn't in 
+  // the view when the user clicks on the "Design" button on the sidebar navigation
   @media(min-width:768px) {
-    width:500px;
+    width:600px;
   }
   @media(min-width:992px) {
     width:850px;
@@ -108,21 +31,27 @@ export const HeadlineContainer = styled.div`
   flex-direction:column;
   justify-content:center;
   align-items:center;
-  height:100vh;
+  height:400px;
   >div{
     width:100%;
     display:flex;
     flex-direction:column;
     align-items:space-between;
-    @media(min-width:768px) {
-      margin:0 auto;
-    }
-    @media(min-width:992px) {
+    align-self:flex-end;
+  }
+  @media(min-width:768px) {
+    height:100vh;
+  }
+  @media(min-width:992px) {
+    >div{
       flex-direction:row;
       align-items:flex-end;
       justify-content:space-between;
     }
-    @media(min-width:1600px){
+  }
+  @media(min-width:1600px) {
+    height:700px;
+    >div{
       width:960px;
     }
   }
@@ -241,6 +170,9 @@ export const HeadlineHighlight = styled.span`
 `
 
 export const DesignProjects = styled.div`
+  display:flex;
+  justify-content:space-between;
+  flex-wrap: wrap;
   width:100%;
   color: ${props => props.defaultTheme ? COLORS.WHITE : COLORS.DARKBLACK};
 `
@@ -249,99 +181,56 @@ export const DesignProjectItem = styled.div`
   display:flex;
   align-items:center;
   flex-direction:column;
-  border-radius:12px;
+  height:160px;
   color:inherit;
-  margin:0 0 200px 0;
-  ${props => {return revealProjects(props.designProjectVisible)}}
-  &:nth-child(2){
-    margin: 0 !important;
+  margin:0 0 20px 0;
+  padding:14px;
+  border-radius:12px;
+  background-color:${props => props.defaultTheme ? COLORS.DARKGRAY : COLORS.LIGHTGRAY};
+  overflow:hidden;
+  opacity:${props => props.designProjectVisible ? 1 : 0};
+  transition:opacity .14s ease-in-out;
+  &:nth-child(3){
     img:hover{
       cursor:${`url(${WhiteCursor}) 35 35, auto`};
     }
   }
   @media (min-width:768px) {
-    padding:0 0px 20px 0px;
+    height:360px;
+    padding:20px;
   }
   @media (min-width:992px) {
-    padding:0 0 30px 0;
+    height:515px;
+    padding:30px;
+    margin:0 0 30px 0;
+    &:nth-child(2), &:nth-child(3) {
+      width:410px;
+    }
   }
   @media (min-width:1200px) {
-    padding:0 0 60px 0;
+    height:574px;
+    &:nth-child(2), &:nth-child(3) {
+      width:460px;
+    }
+  }
+  @media (min-width:1600px) {
+    height:775px;
+    &:nth-child(2), &:nth-child(3) {
+      width:635px;
+    }
   }
 `
 
 export const PreviewContainer = styled.div`
   width:100%;
-  position:relative;
+  overflow:hidden;
+  border-radius:12px;
+  transform:${props => props.designProjectVisible ? 'translateY(0)' : 'translateY(50px)'};
+  transition: transform .17s ease-in-out;
 `
 
 export const Preview = styled.img`
-  display:block;
-  position:relative;
   width:100%;
-  max-width:230px;
-  border-radius:12px;
-  margin:0 auto 40px auto;
-  z-index:1;
-  @media(min-width:650px) {
-    margin:0px auto 32px auto;
-  }
-  @media(min-width:768px) {
-    max-width:430px;
-  }
-  @media(min-width:992px) {
-    max-width:640px;
-    margin:0 auto 40px auto;
-  }
-  @media(min-width:1600px) {
-    margin:0 auto 50px auto;
-    max-width:990px;
-  }
-`
-
-export const DecorationContainer = styled.span`
-  display:block;
-  position:absolute;
-  height:130px;
-  width:83px;
-  top:-15px;
-  left:0px;
-  &:nth-child(2){
-    height:83px;
-    width:130px;
-    top:auto;
-    left:auto;
-    right:0px;
-    bottom:25px;
-  }
-  @media(min-width:768px) {
-    height:200px;
-    width:128px;
-    top:-30px;
-    &:nth-child(2){
-      height:128px;
-      width:200px;
-      bottom:0;
-    }
-  }
-  @media(min-width:992px) {
-    height:255px;
-    width:165px;
-    top:-35px;
-    &:nth-child(2){
-      height:165px;
-      width:255px;
-    }
-  }
-  @media(min-width:1600px) {
-    height:360px;
-    width:230px;
-    top: -80px;
-    &:nth-child(2) {
-      height:230px;
-      width:360px;
-    }
-  }
 `
 
 export const DesignProjectTitle = styled.h3`
@@ -382,17 +271,5 @@ export const DesignProjectDescription = styled.p`
   }
   @media(min-width:1600px) {
     margin:0 0 60px 0;
-  }
-  /* @media(min-width:1600px){
-  } */
-`
-
-export const DesignProjectLive = styled.a`
-  ${MainButton}
-  @media(min-width:992px) {
-    width:285px;
-  }
-  @media(min-width:2000px) {
-    font-size:24px;
   }
 `

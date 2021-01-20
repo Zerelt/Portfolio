@@ -44,6 +44,7 @@ class App extends Component {
       designTextTop: null,
       designProjectOneTop: null,
       designProjectTwoTop: null,
+      designProjectThreeTop: null,
 
       contactHeadlineTop: null,
       nameFieldTop: null,
@@ -135,6 +136,7 @@ class App extends Component {
     const designTextTop = this.designsSection.children[0].children[0].getBoundingClientRect().top
     const designProjectOneTop = this.designsSection.children[1].children[0].getBoundingClientRect().top
     const designProjectTwoTop = this.designsSection.children[1].children[1].getBoundingClientRect().top
+    const designProjectThreeTop = this.designsSection.children[1].children[2].getBoundingClientRect().top
 
     const contactHeadlineTop = this.contactSection.children[0].getBoundingClientRect().top
     const nameFieldTop = this.contactSection.children[1].children[1].children[0].children[0].getBoundingClientRect().top
@@ -150,6 +152,7 @@ class App extends Component {
       designTextTop,
       designProjectOneTop,
       designProjectTwoTop,
+      designProjectThreeTop,
       contactHeadlineTop,
       nameFieldTop,
       emailFieldTop,
@@ -214,7 +217,7 @@ class App extends Component {
       infoOneTop, height, width,
       defaultTheme, currentPage, menuOpen,
       projectOneTop, projectTwoTop, projectThreeTop, quote,
-      designTextTop,designProjectOneTop,designProjectTwoTop,
+      designTextTop,designProjectOneTop,designProjectTwoTop, designProjectThreeTop,
       contactHeadlineTop, nameFieldTop, emailFieldTop, messageFieldTop
     } = this.state
       return (
@@ -275,6 +278,7 @@ class App extends Component {
               designTextTop={designTextTop}
               designProjectOneTop={designProjectOneTop}
               designProjectTwoTop={designProjectTwoTop}
+              designProjectThreeTop={designProjectThreeTop}
             />
             <Contact 
               defaultTheme={defaultTheme}
