@@ -21,6 +21,8 @@ import {
 // import resume file so it can be viewed on the web
 // this is viewed as a separate page on the /Pdfs url
 import AlexDobreResume from 'assets/AlexDobre-Resume.pdf' 
+import AmurLeopard from 'assets/DesignFiles/SonyRedesign-1080px.pdf' 
+import SonyRedesign from 'assets/DesignFiles/AmurLeopard-1080px.pdf' 
 /* eslint-enable */
 
 class App extends Component {
