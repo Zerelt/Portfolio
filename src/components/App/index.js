@@ -42,6 +42,7 @@ class App extends Component {
       projectTwoTop: null,
       projectThreeTop: null,
       quote: null,
+      quoteDesign: null,
 
       designTextTop: null,
       designProjectOneTop: null,
@@ -134,11 +135,12 @@ class App extends Component {
     const projectTwoTop = this.codeSection.children[1].getBoundingClientRect().top
     const projectThreeTop = this.codeSection.children[2].getBoundingClientRect().top
     const quote = this.codeSection.children[3].getBoundingClientRect().top
-
+    
     const designTextTop = this.designsSection.children[0].children[0].getBoundingClientRect().top
     const designProjectOneTop = this.designsSection.children[1].children[0].getBoundingClientRect().top
     const designProjectTwoTop = this.designsSection.children[1].children[1].getBoundingClientRect().top
     const designProjectThreeTop = this.designsSection.children[1].children[2].getBoundingClientRect().top
+    const quoteDesign = this.designsSection.children[2].getBoundingClientRect().top
 
     const contactHeadlineTop = this.contactSection.children[0].getBoundingClientRect().top
     const nameFieldTop = this.contactSection.children[1].children[1].children[0].children[0].getBoundingClientRect().top
@@ -155,6 +157,7 @@ class App extends Component {
       designProjectOneTop,
       designProjectTwoTop,
       designProjectThreeTop,
+      quoteDesign,
       contactHeadlineTop,
       nameFieldTop,
       emailFieldTop,
@@ -218,8 +221,8 @@ class App extends Component {
     const {
       infoOneTop, height, width,
       defaultTheme, currentPage, menuOpen,
-      projectOneTop, projectTwoTop, projectThreeTop, quote,
-      designTextTop,designProjectOneTop,designProjectTwoTop, designProjectThreeTop,
+      projectOneTop, projectTwoTop, projectThreeTop, quote, 
+      designTextTop, designProjectOneTop, designProjectTwoTop, designProjectThreeTop, quoteDesign,
       contactHeadlineTop, nameFieldTop, emailFieldTop, messageFieldTop
     } = this.state
       return (
@@ -281,6 +284,7 @@ class App extends Component {
               designProjectOneTop={designProjectOneTop}
               designProjectTwoTop={designProjectTwoTop}
               designProjectThreeTop={designProjectThreeTop}
+              quoteDesign={quoteDesign}
             />
             <Contact 
               defaultTheme={defaultTheme}

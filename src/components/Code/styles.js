@@ -329,8 +329,10 @@ export const QuoteText = styled.p`
   font-family:playfair-display, serif;
   font-size:18px;
   line-height:26px;
+  letter-spacing: -0.5px;
   color:inherit;
   text-indent:60px;
+  text-indent:31px;
   opacity: ${props => props.quote<= props.height*.75 ? 1 : 0};
   transform: ${props => props.quote<= props.height*.75 ? 'translateX(0)' : 'translateX(-50px)'};
   transition: opacity .22s ease, transform .22s ease;
@@ -341,38 +343,52 @@ export const QuoteText = styled.p`
     line-height:60px;
     text-indent:0;
     &:nth-child(1){
-      top:0;
-      left:0;
+      top:-5px;
+      left:-5px;
     }
     &:nth-child(2){
-      bottom:0;
-      right:0;
+      bottom:-14px;
+      right:-5px;
     }
   }
   @media (min-width:768px) {
     font-size:30px;
     line-height:40px;
+    text-indent: 60px;
+    letter-spacing:normal;
     span{
       font-size:126px;
       line-height:105px;
+      &:nth-child(1){
+        top:0;
+        left:0;
+      }
+      &:nth-child(2){
+        bottom:0;
+        right:0;
+      }
     }
   }
   @media (min-width:992px) {
     text-indent:92px;
     font-size:36px;
     line-height:48px;
+    letter-spacing:0.5px;
     span{
       font-size:132px;
       line-height:111px;
     }
   }
   @media (min-width:1200px) {
+    text-indent:75px;
+    letter-spacing: normal;
     span{
       font-size:140px;
       line-height:120px;
     }
   }
   @media(min-width:1600px){
+    text-indent:92px;
     font-size:48px;
     line-height:64px;
     span{
@@ -383,12 +399,12 @@ export const QuoteText = styled.p`
 `
 
 export const QuoteAuthor = styled(QuoteText)`
-  width:152px;
+  width:195px;
   font-size:16px;
   line-height:24px;
   align-self:flex-end;
   text-align:right;
-  text-indent:40px;
+  text-indent:60px;
   margin:36px 0 0 0;
   transform: ${props => props.quote<= props.height*.75 ? 'translateX(0)' : 'translateX(50px)'};
   @media(min-width:768px) {

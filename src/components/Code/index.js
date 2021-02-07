@@ -103,12 +103,12 @@ const Code = ({ codeRef, defaultTheme, projectOneTop, projectTwoTop, projectThre
       })}
       <Quote defaultTheme={defaultTheme}>
         <QuoteText height={height} quote={quote}>
-          <span>&#8220;</span>I think his dedication, diligence, good eye for design, and solid code 
-          will be a great addition to any project, and I'm interested in seeing 
-          where he will go next!<span>&#8222;</span>
+          <span>&#8220;</span>Alex has been an instrumental part of our engineering 
+          team for the last two years. It’s an absolute pleasure to recommend 
+          Alex for any position he decides to pursue.<span>&#8222;</span>
         </QuoteText>
         <QuoteAuthor height={height} quote={quote}>
-          Fabio Santos, Sr Software Engineer
+          Michael Zucker, The Prospect Exchange CEO
         </QuoteAuthor>
       </Quote>
     </WorkContainer>
