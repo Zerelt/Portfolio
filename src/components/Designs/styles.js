@@ -273,3 +273,100 @@ export const DesignProjectDescription = styled.p`
     margin:0 0 60px 0;
   }
 `
+
+export const Quote = styled.div`
+  width:100%;
+  display:flex;
+  flex-direction:column;
+  color: ${props => props.defaultTheme ? COLORS.WHITE : COLORS.DARKBLACK};
+  margin:198px 0 0 0;
+  @media(min-width:768px){
+    margin:246px 0 96px 0;
+  }
+`
+
+export const QuoteText = styled.p`
+  position:relative;
+  font-family:playfair-display, serif;
+  font-size:18px;
+  line-height:26px;
+  color:inherit;
+  text-indent:60px;
+  opacity: ${props => props.quote<= props.height*.75 ? 1 : 0};
+  transform: ${props => props.quote<= props.height*.75 ? 'translateX(0)' : 'translateX(-50px)'};
+  transition: opacity .22s ease, transform .22s ease;
+  span{
+    display:block;
+    position:absolute;
+    font-size:100px;
+    line-height:60px;
+    text-indent:0;
+    &:nth-child(1){
+      top:0;
+      left:0;
+    }
+    &:nth-child(2){
+      bottom:0;
+      right:0;
+    }
+  }
+  @media (min-width:768px) {
+    font-size:30px;
+    line-height:40px;
+    span{
+      font-size:126px;
+      line-height:105px;
+    }
+  }
+  @media (min-width:992px) {
+    text-indent:92px;
+    font-size:36px;
+    line-height:48px;
+    span{
+      font-size:132px;
+      line-height:111px;
+    }
+  }
+  @media (min-width:1200px) {
+    span{
+      font-size:140px;
+      line-height:120px;
+    }
+  }
+  @media(min-width:1600px){
+    font-size:48px;
+    line-height:64px;
+    span{
+      font-size:180px;
+      line-height:145px;
+    }
+  }
+`
+
+export const QuoteAuthor = styled(QuoteText)`
+  width:152px;
+  font-size:16px;
+  line-height:24px;
+  align-self:flex-end;
+  text-align:right;
+  text-indent:40px;
+  margin:36px 0 0 0;
+  transform: ${props => props.quote<= props.height*.75 ? 'translateX(0)' : 'translateX(50px)'};
+  @media(min-width:768px) {
+    width:auto;
+    font-size:24px;
+    margin:26px 0 0 0;
+  }
+  @media(min-width:992px) {
+    font-size:26px;
+    margin:36px 0 0 0;
+  }
+  @media(min-width:1200px) {
+    font-size:30px;
+    margin:40px 0 0 0;
+  }
+  @media(min-width:1600px) {
+    font-size:42px;
+    margin:48px 0 0 0;
+  }
+`

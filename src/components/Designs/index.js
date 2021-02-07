@@ -15,7 +15,10 @@ import {
   DesignProjects,
   DesignProjectItem,
   PreviewContainer,
-  Preview
+  Preview,
+  Quote,
+  QuoteText,
+  QuoteAuthor
 } from './styles'
 
 
@@ -34,7 +37,7 @@ const designProjects = [
   }
 ]
 
-const Designs = ({ designsRef, defaultTheme, height, designTextTop, designProjectOneTop, designProjectTwoTop, designProjectThreeTop }) => {
+const Designs = ({ designsRef, defaultTheme, height, designTextTop, designProjectOneTop, designProjectTwoTop, designProjectThreeTop, quoteDesign }) => {
 
   const designProjectTopArray = [designProjectOneTop, designProjectTwoTop, designProjectThreeTop]
 
@@ -79,6 +82,17 @@ const Designs = ({ designsRef, defaultTheme, height, designTextTop, designProjec
         }
       </DesignProjects>
 
+      <Quote defaultTheme={defaultTheme}>
+        <QuoteText height={height} quote={quoteDesign}>
+          <span>&#8220;</span>I think his dedication, diligence, good eye for design, and solid code 
+          will be a great addition to any project, and I'm interested in seeing 
+          where he will go next!<span>&#8222;</span>
+        </QuoteText>
+        <QuoteAuthor height={height} quote={quoteDesign}>
+          Fabio Santos, Sr Software Engineer
+        </QuoteAuthor>
+      </Quote>
+
     </DesignsContainer>
   )
 }
@@ -90,7 +104,8 @@ Designs.propTypes = {
   designTextTop: PropTypes.number,
   designProjectOneTop: PropTypes.number,
   designProjectTwoTop: PropTypes.number,
-  designProjectThreeTop: PropTypes.number
+  designProjectThreeTop: PropTypes.number,
+  quoteDesign: PropTypes.number
 }
 
 export default hot(module)(Designs)
