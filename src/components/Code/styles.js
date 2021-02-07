@@ -332,7 +332,7 @@ export const QuoteText = styled.p`
   letter-spacing: -0.5px;
   color:inherit;
   text-indent:60px;
-  text-indent:31px;
+  text-indent:30px;
   opacity: ${props => props.quote<= props.height*.75 ? 1 : 0};
   transform: ${props => props.quote<= props.height*.75 ? 'translateX(0)' : 'translateX(-50px)'};
   transition: opacity .22s ease, transform .22s ease;
