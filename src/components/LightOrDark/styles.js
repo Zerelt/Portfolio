@@ -10,7 +10,6 @@ export const LightOrDarkContainer = styled.div`
     flex-direction:column;
     position:absolute;
     height:90px;
-    width:12px;
     display:flex;
     position:fixed;
     bottom:40px;
