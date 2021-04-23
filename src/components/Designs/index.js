@@ -89,7 +89,7 @@ const Designs = ({ designsRef, defaultTheme, height, designTextTop, designProjec
           where he will go next!<span>&#8222;</span>
         </QuoteText>
         <QuoteAuthor height={height} quote={quoteDesign}>
-          Fabio Santos, Sr Software Engineer
+          Fábio Santos, Sr Software Engineer
         </QuoteAuthor>
       </Quote>
 
